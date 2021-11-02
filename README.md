@@ -4,7 +4,7 @@
 
 Tables
 
-| Nombres                                 |   Carnet    |
+| Nombres                                 | Carnet      |
 |-----------------------------------------|-------------|
 | _*Alejandra Clairé Aguilar Mata*_       | _*AM19089*_ |
 | _*Azucena Eleticia Merlos Sandoval*_    | _*MS19038*_ |
