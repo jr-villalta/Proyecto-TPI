@@ -2,8 +2,6 @@
 
 ## Integrantes
 
-Tables
-
 | Nombres                                 | Carnet      |
 |-----------------------------------------|-------------|
 | _*Alejandra Clairé Aguilar Mata*_       | _*AM19089*_ |
