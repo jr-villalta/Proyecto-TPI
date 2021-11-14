@@ -20,7 +20,7 @@
     <div id="app">
         <nav class="navbar navbar-expand-lg navbar-dark bg-primary" >
             <div class="container-fluid">
-              <a class="navbar-brand" href="#" style="font-weight: 600;">NETFILM</a>
+              <a class="navbar-brand" href="/home" style="font-weight: 600;">NETFILM</a>
               <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarScroll" aria-controls="navbarScroll" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
               </button>
@@ -29,6 +29,19 @@
                   {{-- <li class="nav-item">
                     <a class="nav-link active" aria-current="page" href="#">Enlace</a>
                   </li> --}}
+                @auth
+                    @if(Auth::user()->type == 1)
+                    <li class="nav-item dropdown">
+                        <a id="navbarScrollingDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false" > {{-- v-pre --}}
+                            {{ __('Manage') }} <span class="caret"></span>
+                        </a>
+                        <ul class="dropdown-menu" aria-labelledby="navbarScrollingDropdown">
+                            <a class="dropdown-item" href="#"> {{ __('Users') }}</a>
+                            <a class="dropdown-item" href="\movie"> {{ __('Movies') }}</a>
+                        </ul>
+                    </li>      
+                    @endif  
+                @endauth
                 </ul>
                 <div class="d-flex">
                     <ul class="navbar-nav ml-auto">

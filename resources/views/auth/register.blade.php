@@ -18,7 +18,7 @@
                   <p>Register to enjoy the best entertainment</p>
                 
                   <div class="form-floating mb-3">
-                    <input id="floatingPassword" placeholder="Name"  type="text" class="form-control @error('name') is-invalid @enderror" name="name" value="{{ old('name') }}" required autocomplete="name" autofocus>
+                    <input id="floatingInput" placeholder="Name"  type="text" class="form-control @error('name') is-invalid @enderror" name="name" value="{{ old('name') }}" required autocomplete="name" autofocus>
                     <label for="floatingInput">Name</label>
                     @error('name')
                     <span class="invalid-feedback" role="alert">
@@ -28,7 +28,7 @@
                   </div>
 
                   <div class="form-floating mb-3">
-                    <input id="floatingPassword" placeholder="Password" type="email" class="form-control @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" required autocomplete="email" autofocus>
+                    <input id="floatingInput" placeholder="E-Mail Address" type="email" class="form-control @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" required autocomplete="email" autofocus>
                     <label for="floatingInput">E-Mail Address</label>
                     @error('email')
                     <span class="invalid-feedback" role="alert">
