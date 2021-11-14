@@ -1,0 +1,112 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+.div-container{
+    width: 90%;
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+.movies-container{
+    width: 100%;
+    display: grid;
+    gap: 10px;
+    grid-template-columns: repeat(1,1fr);
+    grid-template-rows: repeat(auto,auto);
+    grid-template-areas: "movie";
+}
+
+.movie{
+    width: 100%;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.movie-photo{
+    width: 150px;
+    height: 200px;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    border-radius:5px;
+    grid-area: movie;
+}
+
+.movie p{
+    width: 150px;
+    font-weight: 600;
+    text-align: center;
+    margin: 5px 0px;
+}
+
+@media screen and (min-width:350px){
+    .movies-container{
+        grid-template-columns: repeat(2,1fr);
+        grid-template-rows: repeat(auto,auto);
+        grid-template-areas: "movie movie";
+    }
+}
+
+@media screen and (min-width:550px){
+    .movies-container{
+        grid-template-columns: repeat(3,1fr);
+        grid-template-rows: repeat(auto,auto);
+        grid-template-areas: "movie movie movie";
+    }
+}
+
+@media screen and (min-width:700px){
+    .movies-container{
+        grid-template-columns: repeat(4,1fr);
+        grid-template-rows: repeat(auto,auto);
+        grid-template-areas: "movie movie movie movie";
+    }
+}
+
+@media screen and (min-width:800px){
+    .movie-photo{
+        width: 165px;
+        height: 220px;
+        grid-area: movie;
+    }
+    
+    .movie p{
+        width: 160px;
+    } 
+}
+
+@media screen and (min-width:900px){
+    .movie-photo{
+        width: 180px;
+        height: 240px;
+        grid-area: movie;
+    }
+    
+    .movie p{
+        width: 180px;
+    } 
+}
+
+@media screen and (min-width:1000px){
+    .movie-photo{
+        width: 210px;
+        height: 280px;
+        grid-area: movie;
+    }
+    
+    .movie p{
+        width: 200px;
+    }  
+}
+
+@media screen and (min-width:1200px){
+   
+    .movies-container{
+        grid-template-columns: repeat(5,1fr);
+        grid-template-rows: repeat(auto,auto);
+        grid-template-areas: "movie movie movie movie movie";
+    }
