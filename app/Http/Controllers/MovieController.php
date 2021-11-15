@@ -3,17 +3,23 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Movie;
 
 class MovieController extends Controller
-{
+{   
+    public function __construct(){
+        $this->middleware('isadmin');
+    }
     /**
      * Display a listing of the resource.
      *
      * @return \Illuminate\Http\Response
      */
     public function index()
-    {
-        return view('movie.index');
+    {   
+        return view('movie.index',[
+            'movies' => movie::all()
+        ]);
     }
 
     /**
@@ -33,8 +39,38 @@ class MovieController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function store(Request $request)
-    {
-        //
+    {   
+        
+        /* $request->validate([
+            'title' => 'required|min:3',
+            'description' => 'required|min:5',
+            'stock' => 'required|numeric|min:1',
+            'rental_prince' => 'required|numeric|min:1',
+            'sale_price' => 'required|numeric|min:5',
+            'availability' => 'required|numeric|min:0',
+            'image' => 'required|mimes:jpeg,jpg,bmp,png',
+        ]); */
+
+        $movie = new Movie();
+
+        if($request->hasFile('image')){
+            $file = $request->file('image');
+            $path = 'img/moviesfile/';
+            $filename = time().'-'.$file->getClientOriginalName();
+            $uploadSuccess = $request->file('image')->move($path,$filename);
+            $movie->image = $path.$filename;
+        }
+
+        $movie->title = $request->title;
+        $movie->description = $request->description;
+        $movie->stock = $request->stock;
+        $movie->rental_price = $request->rental_price;
+        $movie->sale_price = $request->sale_price;
+        $movie->availability = $request->availability;
+    
+        $movie->save();
+    
+        return redirect('/movie');
     }
 
     /**
@@ -43,9 +79,11 @@ class MovieController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show(Movie $movie)
     {
-        //
+        return view('movie.show',[
+            'movie' =>$movie
+        ]);
     }
 
     /**
@@ -54,9 +92,11 @@ class MovieController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
-    {
-        //
+    public function edit(Movie $movie)
+    {   
+        return view('movie.edit',[
+            'movie' =>$movie
+        ]);
     }
 
     /**
@@ -68,7 +108,26 @@ class MovieController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $movie = Movie::find($id);
+
+        if($request->hasFile('image')){
+            $file = $request->file('image');
+            $path = 'img/moviesfile/';
+            $filename = time().'-'.$file->getClientOriginalName();
+            $uploadSuccess = $request->file('image')->move($path,$filename);
+            $movie->image = $path.$filename;
+        }
+
+        $movie->title = $request->title;
+        $movie->description = $request->description;
+        $movie->stock = $request->stock;
+        $movie->rental_price = $request->rental_price;
+        $movie->sale_price = $request->sale_price;
+        $movie->availability = $request->availability;
+
+        $movie->save();
+
+        return redirect('/movie');
     }
 
     /**
@@ -79,6 +138,8 @@ class MovieController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $movie = Movie::find($id);
+        $movie->delete();
+        return redirect('/movie');
     }
 }

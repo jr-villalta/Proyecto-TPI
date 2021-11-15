@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Movie;
 
 class HomeController extends Controller
 {
@@ -22,7 +23,11 @@ class HomeController extends Controller
      * @return \Illuminate\Contracts\Support\Renderable
      */
     public function index()
-    {
-        return view('home');
+    {   
+        $movies = Movie::where('availability', 1)->get();
+        
+        return view('home',[
+            'movies' => $movies
+        ]);
     }
 }

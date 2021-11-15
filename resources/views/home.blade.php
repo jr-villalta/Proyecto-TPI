@@ -4,34 +4,12 @@
 
 <div class="div-container">
    <div class="movies-container">
+      @foreach ($movies as $movie)
       <div class="movie">
-         <a href="#" class="movie-photo shadow" style="background-image: url(https://phantom-marca.unidadeditorial.es/e522d2e2fd0772e0462ca8d15e3a05ee/resize/640/assets/multimedia/imagenes/2019/09/17/15687205359826.jpg)"></a>
-         <p>Titulo largo de pelicula para probar</p>
+         <a href="#" class="movie-photo shadow" style="background-image: url({{asset($movie->image)}})"></a>
+         <p>{{$movie->title}}</p>
       </div>
-      <div class="movie">
-         <a href="#" class="movie-photo shadow" style="background-image: url(https://academiaplay.es/wp-content/uploads/2016/05/Se7en-–-David-Fincher.jpg)"></a>
-         <p class="">Titulo corto</p>
-      </div>
-      <div class="movie">
-         <a href="#" class="movie-photo shadow" style="background-image: url(https://phantom-marca.unidadeditorial.es/e522d2e2fd0772e0462ca8d15e3a05ee/resize/640/assets/multimedia/imagenes/2019/09/17/15687205359826.jpg)"></a>
-         <p>Titulo largo de pelicula para probar</p>
-      </div>
-      <div class="movie">
-         <a href="#" class="movie-photo shadow" style="background-image: url(https://academiaplay.es/wp-content/uploads/2016/05/Se7en-–-David-Fincher.jpg)"></a>
-         <p>Titulo corto</p>
-      </div>
-      <div class="movie">
-         <a href="#" class="movie-photo shadow" style="background-image: url(https://academiaplay.es/wp-content/uploads/2016/05/Se7en-–-David-Fincher.jpg)"></a>
-         <p>Titulo corto</p>
-      </div>
-      <div class="movie">
-         <a href="#" class="movie-photo shadow" style="background-image: url(https://academiaplay.es/wp-content/uploads/2016/05/Se7en-–-David-Fincher.jpg)"></a>
-         <p>Titulo corto</p>
-      </div>
-      <div class="movie">
-         <a href="#" class="movie-photo shadow" style="background-image: url(https://academiaplay.es/wp-content/uploads/2016/05/Se7en-–-David-Fincher.jpg)"></a>
-         <p>Titulo corto</p>
-      </div>
+      @endforeach
    </div>
 </div>
 {{-- <div class="div-main">
