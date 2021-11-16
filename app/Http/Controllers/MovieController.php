@@ -1,9 +1,12 @@
 <?php
 
+
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Movie;
+use App\like;
+use Auth;
 
 class MovieController extends Controller
 {   
@@ -147,8 +150,41 @@ class MovieController extends Controller
     }
 
     public function details(Movie $movie){
+
+        $iflike = like::where('user_id', Auth::user()->id)->where('movie_id', $movie->id)->exists();
+
         return view('movie.details',[
-            'movie' => $movie
+            'movie' => $movie,
+            'iflike' => $iflike,
         ]);
+    }
+
+    public function like($id){
+
+        $iflike = like::where('user_id', Auth::user()->id)->where('movie_id', $id)->exists();
+
+        if($iflike){
+
+            $movie = Movie::find($id);
+            $movie->likes -=1;
+            $like  = like::where('user_id', Auth::user()->id)->where('movie_id', $id)->get();
+            $like->each->delete();
+            $movie->save();    
+        
+        }
+        else{
+
+            $movie = Movie::find($id);
+            $movie->likes +=1;
+            $like  = new like();
+            $like->user_id = Auth::user()->id;
+            $like->movie_id = $id;
+
+            $like->save();
+            $movie->save();
+            
+        }
+
+        return redirect()->back();
     }
 }
