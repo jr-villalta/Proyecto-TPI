@@ -10,8 +10,8 @@
                         <li class="list-group-item"><strong class="me-2">Title:</strong>{{$movie->title}}</li>
                         <li class="list-group-item" style="text-align: justify;"><strong class="me-2">Description:</strong>{{$movie->description}}</li>
                         <li class="list-group-item"><strong class="me-2">Stock:</strong>{{$movie->stock}} units</li>
-                        <li class="list-group-item"><strong class="me-2">Rental Price:</strong>{{number_format($movie->rental_price,2,".",",")}}</li>
-                        <li class="list-group-item"><strong class="me-2">Sale Price:</strong> {{number_format($movie->sale_price,2,".",",")}}</li>
+                        <li class="list-group-item"><strong class="me-2">Rental Price:</strong>$ {{number_format($movie->rental_price,2,".",",")}}</li>
+                        <li class="list-group-item"><strong class="me-2">Sale Price:</strong>$ {{number_format($movie->sale_price,2,".",",")}}</li>
                         <li class="list-group-item"><strong class="me-2">Availability:</strong>
                             @if ($movie->availability == 1)
                                 {{ __('Available') }}
@@ -19,6 +19,7 @@
                                 {{ __('Not available') }} 
                             @endif
                         </li>
+                        <li class="list-group-item"><strong class="me-2">Likes:</strong> {{$movie->likes}}</li>
                         <li class="list-group-item text-center mt-2"><a href="/movie" class="btn btn-primary px-4">Back</a></li>
                       </ul>
                   </div>

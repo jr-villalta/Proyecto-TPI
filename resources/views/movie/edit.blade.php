@@ -8,7 +8,7 @@
                     <div class="text-center">
                       <h4 class="mt-2 mb-3 pb-1 text-primary h2" style="font-weight: 700;">Edit Movie</h4>
                     </div>
-                    <form method="POST" action="/movie/{{$movie->id}}">
+                    <form method="POST" action="/movie/{{$movie->id}}" enctype="multipart/form-data">
                         @csrf
                         @method('PUT')
                         <div class="mb-4">
@@ -68,7 +68,8 @@
                           @enderror
                         </div>
                         <div class="mb-4">
-                          <input class="form-control @error('image') is-invalid @enderror" type="file" id="" name="image" value="{{ old('image',$movie->image) }}" required autofocus>
+                          <input class="form-control @error('image') is-invalid @enderror" type="file" id="" name="image" value=""  autofocus>
+                          <input type="hidden" name='old_image' id='old_image' value="{{$movie->image}}"/>
                           @error('image')
                           <span class="invalid-feedback" role="alert">
                               <strong>{{ $message }}</strong>

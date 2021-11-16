@@ -5,10 +5,15 @@ namespace App;
 use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
+use Ap\Movie;
 
 class User extends Authenticatable
 {
     use Notifiable;
+
+    public function movies(){
+        return $this->hasMany(Movie::class);
+    }
 
     /**
      * The attributes that are mass assignable.

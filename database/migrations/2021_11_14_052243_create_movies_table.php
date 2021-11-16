@@ -22,6 +22,7 @@ class CreateMoviesTable extends Migration
             $table->float('rental_price');
             $table->float('sale_price');
             $table->unsignedInteger('availability');
+            $table->unsignedBigInteger('likes');
             $table->timestamps();
         });
     }
