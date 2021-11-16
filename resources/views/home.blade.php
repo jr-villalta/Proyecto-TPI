@@ -6,7 +6,7 @@
    <div class="movies-container">
       @foreach ($movies as $movie)
       <div class="movie">
-         <a href="#" class="movie-photo shadow" style="background-image: url({{asset($movie->image)}})"></a>
+         <a href="/movie/details/{{$movie->id}}" class="movie-photo shadow" style="background-image: url({{asset($movie->image)}})"></a>
          <p>{{$movie->title}}</p>
       </div>
       @endforeach

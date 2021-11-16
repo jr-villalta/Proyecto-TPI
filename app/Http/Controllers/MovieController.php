@@ -8,7 +8,7 @@ use App\Movie;
 class MovieController extends Controller
 {   
     public function __construct(){
-        $this->middleware('isadmin');
+        
     }
     /**
      * Display a listing of the resource.
@@ -67,6 +67,7 @@ class MovieController extends Controller
         $movie->rental_price = $request->rental_price;
         $movie->sale_price = $request->sale_price;
         $movie->availability = $request->availability;
+        $movie->likes = 0;
     
         $movie->save();
     
@@ -116,6 +117,8 @@ class MovieController extends Controller
             $filename = time().'-'.$file->getClientOriginalName();
             $uploadSuccess = $request->file('image')->move($path,$filename);
             $movie->image = $path.$filename;
+        }else{
+            $movie->image = $request->old_image;
         }
 
         $movie->title = $request->title;
@@ -141,5 +144,11 @@ class MovieController extends Controller
         $movie = Movie::find($id);
         $movie->delete();
         return redirect('/movie');
+    }
+
+    public function details(Movie $movie){
+        return view('movie.details',[
+            'movie' => $movie
+        ]);
     }
 }

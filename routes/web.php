@@ -18,4 +18,5 @@ Auth::routes();
 Route::get('/home', 'HomeController@index')->name('home');
 
 //rutas movie
-Route::resource('/movie','MovieController');
+Route::get('/movie/details/{movie}','MovieController@details');
+Route::resource('/movie','MovieController')->middleware('isadmin');
