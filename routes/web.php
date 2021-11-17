@@ -16,7 +16,9 @@ Route::get('/','HomeController@index')->name('home');
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
+Route::get('/home/searchAndOrder','HomeController@searchAndOrder');
 
 //rutas movie
 Route::get('/movie/details/{movie}','MovieController@details');
+Route::get('/movie/like/{movie}','MovieController@like')->middleware('auth');
 Route::resource('/movie','MovieController')->middleware('isadmin');

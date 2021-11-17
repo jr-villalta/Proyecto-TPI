@@ -5,10 +5,14 @@
     <div class="row">
         <div class="col-11 col-md-10 col-lg-7 col-xl-6 card rounded-3 text-black mx-auto position-relative">
             
-                <button type="" class="badge bg-danger position-absolute text-light px-3 py-2"  style="top:30px; left:-6px; font-size:14px; border:none;">
-                    <i class="far fa-heart"></i>
+                <a href="/movie/like/{{$movie->id}}" class="badge bg-danger position-absolute text-light px-3 py-2"  style="top:30px; left:-6px; font-size:14px; border:none; text-decoration:none;">
+                    @if ($iflike)
+                        <i class="fas fa-heart"></i>
+                    @else
+                        <i class="far fa-heart"></i>
+                    @endif
                     {{$movie->likes}}
-                </button>
+                </a>
             
             <div class="card-body p-md-5 mx-md-4">
                 <div class="movie-photo shadow m-auto" style="background-image: url({{asset($movie->image)}})">
@@ -34,4 +38,4 @@
 </div>
 @endsection
 
-{{-- <i class="fas fa-heart"></i> --}}
+
