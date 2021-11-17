@@ -151,7 +151,12 @@ class MovieController extends Controller
 
     public function details(Movie $movie){
 
-        $iflike = like::where('user_id', Auth::user()->id)->where('movie_id', $movie->id)->exists();
+        if(!Auth::check()){
+            $iflike = false;
+        }
+        else{
+            $iflike = like::where('user_id', Auth::user()->id)->where('movie_id', $movie->id)->exists();
+        }
 
         return view('movie.details',[
             'movie' => $movie,
@@ -187,4 +192,6 @@ class MovieController extends Controller
 
         return redirect()->back();
     }
+
+    
 }

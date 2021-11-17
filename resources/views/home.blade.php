@@ -3,23 +3,34 @@
 @section('content')
 
 <div class="div-container">
-   <div class="movies-container">
-      @foreach ($movies as $movie)
-      <div class="movie">
-         <a href="/movie/details/{{$movie->id}}" class="movie-photo shadow" style="background-image: url({{asset($movie->image)}})"></a>
-         <p>{{$movie->title}}</p>
-      </div>
-      @endforeach
+   <div class="w-100 d-flex justify-content-end mx-0 mb-4 row">
+      <form class="d-flex col-12 col-md-6 col-lg-4 p-0" method="GET" action="/home">
+         <select name="o" class="form-select shadow-sm me-3" aria-label=".form-select-sm example" style="width:40%;">
+            <option value="" selected>Order by</option>
+            <option value="title">Title</option>
+            <option value="likes">Likes</option>
+          </select>
+         <input name="s" class="form-control me-2 shadow-sm" type="search" placeholder="Search" aria-label="Search">
+         <button class="btn btn-primary px-3 shadow-sm" type="submit"><i class="fas fa-search"></i></button>
+      </form>
    </div>
+   @if(count($movies)<1)
+      <div class="py-4" style="background-color:white;border-radius:5px;">
+         <p class="h5 mx-3">No matching records found...</p>
+      </div>
+   @else
+      <div class="movies-container py-4" style="background-color:white; border-top-left-radius:5px;border-top-right-radius:5px;">
+         @foreach ($movies as $movie)
+            <div class="movie">
+               <a href="/movie/details/{{$movie->id}}" class="movie-photo" style="background-image: url({{asset($movie->image)}})"></a>
+               <p>{{$movie->title}}</p>
+            </div>
+         @endforeach
+      </div>
+      <div class="w-100 d-flex justify-content-center paginate" style="background-color: white; border-bottom-left-radius:5px;border-bottom-right-radius:5px;">
+         {{$movies->links()}}
+      </div>
+   @endif
 </div>
-{{-- <div class="div-main">
-   <h1 class="h4 p-3">MOVIES IN STOCK</h1>
-   <div class="div-movies">
-      <div class="movie">
-         <div class="movie-photo" style="background-image: url(https://phantom-marca.unidadeditorial.es/e522d2e2fd0772e0462ca8d15e3a05ee/resize/640/assets/multimedia/imagenes/2019/09/17/15687205359826.jpg)"></div>
-         <p>Titulo largo de pelicula para probar</p>
-      </div>
-   </div>
-</div> --}}
 
 @endsection
