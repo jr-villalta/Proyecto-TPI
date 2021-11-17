@@ -10,14 +10,14 @@
 | contains the "web" middleware group. Now create something great!
 |
 */
-
-Route::get('/','HomeController@index')->name('home');
-
+//rutas authentication
 Auth::routes();
-
+//rutas users
+Route::get('/user/setting','UserController@setting')->name('setting');
+Route::resource('/user','UserController');
+//rutas home
+Route::get('/','HomeController@index')->name('home');
 Route::get('/home', 'HomeController@index')->name('home');
-Route::get('/home/searchAndOrder','HomeController@searchAndOrder');
-
 //rutas movie
 Route::get('/movie/details/{movie}','MovieController@details');
 Route::get('/movie/like/{movie}','MovieController@like')->middleware('auth');
