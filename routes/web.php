@@ -14,6 +14,7 @@
 Auth::routes();
 //rutas users
 Route::get('/user/setting','UserController@setting')->name('setting');
+Route::put('/user/roleUpdate/{user}','UserController@roleUpdate');
 Route::resource('/user','UserController');
 //rutas home
 Route::get('/','HomeController@index')->name('home');

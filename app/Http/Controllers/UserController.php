@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-
+use App\User;
 class UserController extends Controller
 {
     /**
@@ -13,7 +13,9 @@ class UserController extends Controller
      */
     public function index()
     {
-        //
+        return view('user.index',[
+            'users' => User::all()
+        ]);
     }
 
     /**
@@ -43,9 +45,11 @@ class UserController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show(User $user)
     {
-        //
+        return view('user.show',[
+            'user' =>$user
+        ]);
     }
 
     /**
@@ -84,5 +88,20 @@ class UserController extends Controller
 
     public function setting(){
         return view('user.setting');
+    }
+
+    public function roleUpdate($id){
+
+        $user = User::find($id);
+
+        if($user->is_admin == 1){
+            $user->is_admin = 0;
+        }
+        else{
+            $user->is_admin = 1;
+        }
+
+        $user->save();
+        return redirect()->back();
     }
 }
