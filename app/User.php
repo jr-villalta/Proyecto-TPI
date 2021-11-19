@@ -6,6 +6,9 @@ use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
 use App\Movie;
+use App\rental;
+use App\shopping;
+use App\credit_cards;
 
 class User extends Authenticatable
 {
@@ -14,7 +17,12 @@ class User extends Authenticatable
     public function movies(){
         return $this->hasMany(Movie::class);
     }
-
+    public function rentals(){
+        return $this->hasMany(rental::class);
+    }
+    public function shoppings(){
+        return $this->hasMany(shopping::class);
+    }
     public function cards(){
         return $this->hasMany(credit_cards::class);
     }
