@@ -15,6 +15,9 @@ class User extends Authenticatable
         return $this->hasMany(Movie::class);
     }
 
+    public function cards(){
+        return $this->hasMany(credit_cards::class);
+    }
     /**
      * The attributes that are mass assignable.
      *

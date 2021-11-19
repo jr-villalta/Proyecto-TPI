@@ -13,7 +13,7 @@
                         <div class="tab-content">
                             <!-- credit card info-->
                             <div id="credit-card" class="tab-pane fade show active pt-2">
-                                <form role="form" onsubmit="event.preventDefault()">
+                                <form action="" method="POST" enctype="multipart/form-data"">
                                     <div class="form-group my-2"> <label for="username">
                                         <h6>Card Owner</h6>
                                         </label><input type="text" name="username" placeholder="Card Owner Name" required class="form-control ">
