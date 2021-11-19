@@ -26,4 +26,5 @@ Route::get('/movie/like/{movie}','MovieController@like')->middleware('auth');
 Route::resource('/movie','MovieController')->middleware('isadmin');
 //rutas creditcard
 /* Route::get('creditcard/create','CreditCardController@create'); */
-Route::resource('/creditcard','CreditCardController');
+Route::post('creditcard','CreditCardController@store')->name('creditcard.store');
+Route::delete('creditcard/{creditcard}','CreditCardController@destroy')->name('creditcard.destroy');

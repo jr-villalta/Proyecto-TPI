@@ -129,6 +129,10 @@
                     $('#MM_YY_error').text('Format invalid, example: 01/24')
                     return false
                 }
+                if(MM > 12){
+                    $('#MM_YY_error').text('The maximum month is 12')
+                    return false
+                }
                 if(YY == year){
                     if(MM<=month){
                         $('#MM_YY_error').text('Your card has expired')
