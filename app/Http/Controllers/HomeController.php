@@ -24,7 +24,7 @@ class HomeController extends Controller
      */
     public function index(Request $request)
     {   
-        $n = 2;
+        $n = 10;
 
         if($request->s == null && $request->o == null){
             $movies = Movie::where('availability', 1)->orderBy('title')->paginate($n);
