@@ -22,26 +22,31 @@ class UsersTableSeeder extends Seeder
         $user->password = Hash::make("admin");
         $user->save();
 
+        $user = new User();
         $user->name = "Jorge";
         $user->email = "rg19041@ues.edu.sv";
         $user->password = Hash::make("Minerva.20");
         $user->save();
 
+        $user = new User();
         $user->name = "Cristian";
         $user->email = "ge19008@ues.edu.sv";
         $user->password = Hash::make("Minerva.20");
         $user->save();
 
+        $user = new User();
         $user->name = "Mauricio";
         $user->email = "vf19012@ues.edu.sv";
         $user->password = Hash::make("Minerva.20");
         $user->save();
 
+        $user = new User();
         $user->name = "Azucena";
         $user->email = "ms19038@ues.edu.sv";
         $user->password = Hash::make("Minerva.20");
         $user->save();
 
+        $user = new User();
         $user->name = "Clairé";
         $user->email = "am19089@ues.edu.sv";
         $user->password = Hash::make("Minerva.20");
