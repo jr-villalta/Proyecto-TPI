@@ -24,7 +24,7 @@
                                     <button type="button" class="btn btn-primary dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
                                     Action
                                     </button>
-                                    <ul class="dropdown-menu">
+                                    <ul class="dropdown-menu" style="min-width:5rem;">
                                         <li><a class="dropdown-item text-primary" href="movie/{{$movie->id}}"><i class="far fa-eye me-1"></i>Details</a></li>
                                         <li><a class="dropdown-item text-warning" href="movie/{{$movie->id}}/edit"><i class="far fa-edit me-1"></i>Edit</a></li>
                                         <form action="/movie/{{$movie->id}}" method="POST">
