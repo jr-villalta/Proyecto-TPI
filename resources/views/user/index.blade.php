@@ -23,7 +23,7 @@
                                     <button type="button" class="btn btn-primary dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
                                     Action
                                     </button>
-                                    <ul class="dropdown-menu">
+                                    <ul class="dropdown-menu" style="min-width:5rem;">
                                         <li><a class="dropdown-item text-primary" href="user/{{$user->id}}"><i class="far fa-eye me-1"></i>Details</a></li>
                                         <form action="/user/roleUpdate/{{$user->id}}" method="POST">
                                             @csrf
