@@ -3,14 +3,16 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\User;
-use App\credit_cards;
+use Illuminate\Support\Facades\Hash;
+use Illuminate\Support\Facades\Validator;
 use Auth;
-class UserController extends Controller
-{
+use App\credit_cards;
+
+class CreditCardController extends Controller
+{   
     public function __construct()
     {
-        $this->middleware('auth');
+        //$this->middleware('auth');
     }
     /**
      * Display a listing of the resource.
@@ -19,9 +21,7 @@ class UserController extends Controller
      */
     public function index()
     {
-        return view('user.index',[
-            'users' => User::all()
-        ]);
+        //
     }
 
     /**
@@ -41,8 +41,18 @@ class UserController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function store(Request $request)
-    {
-        //
+    {   
+        
+        $card = new credit_cards();
+        $card->card_owner = $request->card_owner;
+        $card->card_number = $request->card_number;
+        $card->MM = $request->MM;
+        $card->YY = $request->YY;
+        $card->CVV = $request->CVV;
+        $card->user_id = Auth::user()->id;
+        $card->save();
+
+        return redirect()->back();
     }
 
     /**
@@ -51,11 +61,9 @@ class UserController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show(User $user)
+    public function show($id)
     {
-        return view('user.show',[
-            'user' =>$user
-        ]);
+        //
     }
 
     /**
@@ -89,41 +97,9 @@ class UserController extends Controller
      */
     public function destroy($id)
     {
-        //
-    }
-
-    public function setting(){
-        
-        $card_id = 0;
-        $card_number = "";
-        $cardexists = credit_cards::where('user_id', Auth::user()->id)->exists();
-        if($cardexists){
-            $card = credit_cards::where('user_id', Auth::user()->id)->first();
-            $card_id = $card->id;
-            $card_number = $card->card_number;
-        }
-        else{
-        }
-
-        return view('user.setting',[
-            'cardexists' => $cardexists,
-            'card_id' => $card_id,
-            'card_number' => $card_number
-        ]);
-    }
-
-    public function roleUpdate($id){
-
-        $user = User::find($id);
-
-        if($user->is_admin == 1){
-            $user->is_admin = 0;
-        }
-        else{
-            $user->is_admin = 1;
-        }
-
-        $user->save();
+        $card = credit_cards::find($id);
+        $card->delete();
         return redirect()->back();
     }
+
 }

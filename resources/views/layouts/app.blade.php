@@ -41,7 +41,7 @@
                         <a id="navbarScrollingDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false" > {{-- v-pre --}}
                             {{ __('Manage') }} <span class="caret"></span>
                         </a>
-                        <ul class="dropdown-menu" aria-labelledby="navbarScrollingDropdown">
+                        <ul class="dropdown-menu" aria-labelledby="navbarScrollingDropdown" style="min-width:5rem;">
                             <a class="dropdown-item" href="/user"> {{ __('Users') }}</a>
                             <a class="dropdown-item" href="/movie"> {{ __('Movies') }}</a>
                         </ul>
@@ -50,7 +50,7 @@
                         <a id="navbarScrollingDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false" > {{-- v-pre --}}
                             {{ __('Records') }} <span class="caret"></span>
                         </a>
-                        <ul class="dropdown-menu" aria-labelledby="navbarScrollingDropdown">
+                        <ul class="dropdown-menu" aria-labelledby="navbarScrollingDropdown" style="min-width:5rem;">
                             <a class="dropdown-item" href="/movie"> {{ __('Sales') }}</a>
                             <a class="dropdown-item" href="#"> {{ __('Rental') }}</a>
                         </ul>
@@ -79,7 +79,7 @@
                                 <a id="navbarScrollingDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false" > {{-- v-pre --}}
                                     {{ Auth::user()->name }} <span class="caret"></span>
                                 </a>
-                                <ul class="dropdown-menu" aria-labelledby="navbarScrollingDropdown">
+                                <ul class="dropdown-menu" aria-labelledby="navbarScrollingDropdown" style="min-width:5rem;">
                                     <a class="dropdown-item" href="{{ route('setting') }}">Setting</a>
                                     <a class="dropdown-item" href="{{ route('logout') }}" onclick="event.preventDefault();document.getElementById('logout-form').submit();">Logout</a>
                                     <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">@csrf</form>
