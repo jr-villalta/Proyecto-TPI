@@ -16,6 +16,8 @@ Auth::routes();
 Route::get('/user/setting','UserController@setting')->name('setting');
 Route::put('/user/roleUpdate/{user}','UserController@roleUpdate');
 Route::resource('/user','UserController');
+// Route::get('/user/setting', [UserController::class, 'setting']); laravel 8+
+
 //rutas home
 Route::get('/','HomeController@index')->name('home');
 Route::get('/home', 'HomeController@index')->name('home');
