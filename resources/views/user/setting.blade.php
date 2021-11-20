@@ -6,7 +6,7 @@
           <button class="nav-link active" id="pills-payment-tab" data-bs-toggle="pill" data-bs-target="#pills-payment" type="button" role="tab" aria-controls="pills-payment" aria-selected="true">Payment Method</button>
         </li>
         <li class="nav-item" role="presentation">
-          <button class="nav-link" id="pills-profile-tab" data-bs-toggle="pill" data-bs-target="#pills-profile" type="button" role="tab" aria-controls="pills-profile" aria-selected="false">Edit Profile</button>
+          <button class="nav-link" id="pills-profile-tab" data-bs-toggle="pill" data-bs-target="#pills-profile" type="button" role="tab" aria-controls="pills-profile" aria-selected="false">Profile</button>
         </li>
       </ul>
       <div class="tab-content p-3" id="pills-tabContent" style="background-color: white; border-bottom-left-radius:5px; border-bottom-right-radius:5px;">
@@ -77,7 +77,18 @@
 
         </div>
         <div class="tab-pane fade" id="pills-profile" role="tabpanel" aria-labelledby="pills-profile-tab">
-            
+            <div class="row">
+                <div class="col-11 col-md-10 col-lg-7 col-xl-6 card rounded-3 text-black mx-auto" style="border: none">
+                    <div class="card-body p-md-5 mx-md-4">
+                        <i class="fas fa-user text-primary text-center w-100" style="font-size: 80px;"></i>
+                        <ul class="list-group list-group-flush mt-3">
+                            <li class="list-group-item"><strong class="me-2">Name:</strong>{{$user->name}}</li>
+                            <li class="list-group-item"><strong class="me-2">Email Address:</strong>{{$user->email}}</li>
+                            <li class="list-group-item"><strong class="me-2">Member since:</strong>{{$user->created_at}}</li>
+                          </ul>
+                      </div>
+                </div>
+            </div>
         </div>
       </div>
 </div>

@@ -80,7 +80,7 @@
                                     {{ Auth::user()->name }} <span class="caret"></span>
                                 </a>
                                 <ul class="dropdown-menu" aria-labelledby="navbarScrollingDropdown" style="min-width:5rem;">
-                                    <a class="dropdown-item" href="{{ route('setting') }}">Setting</a>
+                                    <a class="dropdown-item" href="{{ route('setting') }}">Profile</a>
                                     <a class="dropdown-item" href="{{ route('logout') }}" onclick="event.preventDefault();document.getElementById('logout-form').submit();">Logout</a>
                                     <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">@csrf</form>
                                 </ul>

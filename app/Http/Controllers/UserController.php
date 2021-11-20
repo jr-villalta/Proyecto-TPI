@@ -93,6 +93,8 @@ class UserController extends Controller
     }
 
     public function setting(){
+
+        $user = User::find(Auth::user()->id); 
         
         $card_id = 0;
         $card_number = "";
@@ -106,6 +108,7 @@ class UserController extends Controller
         }
 
         return view('user.setting',[
+            'user' => $user,
             'cardexists' => $cardexists,
             'card_id' => $card_id,
             'card_number' => $card_number
