@@ -23,12 +23,12 @@ Route::resource('/user','UserController');
 //rutas movie
 Route::get('/movie/details/{movie}','MovieController@details');
 Route::get('/movie/like/{movie}','MovieController@like')->middleware('auth');
-
 Route::get('/movie/shopping/{movie}', 'MovieController@shopping')->middleware(['hascard','auth']);
 Route::get('/movie/rental/{movie}', 'MovieController@rentar')->middleware(['hascard','auth']);
-
 Route::resource('/movie','MovieController')->middleware('isadmin');
 //rutas creditcard
 /* Route::get('creditcard/create','CreditCardController@create'); */
 Route::post('creditcard','CreditCardController@store')->name('creditcard.store');
 Route::delete('creditcard/{creditcard}','CreditCardController@destroy')->name('creditcard.destroy');
+//rutas shopping
+Route::post('shopping','ShoppingController@store')->name('shopping.store');
