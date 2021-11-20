@@ -7,7 +7,10 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Validator;
 use App\Movie;
 use App\like;
+use App\rental;
+use App\shopping;
 use Auth;
+use SebastianBergmann\Environment\Console;
 
 class MovieController extends Controller
 {   
@@ -198,5 +201,28 @@ class MovieController extends Controller
         return redirect()->back();
     }
 
+    public function shopping($id){
+        $ifshop = shopping::where('user_id', Auth::user()->id)->where('movie_id', $id)->exists();
+        
+        if(!$ifshop){
+            $shop = new shopping();
+            $shop->user_id = Auth::user()->id;
+            $shop->movie_id = $id;
+            $shop->save();
+        }
+    }
     
+    public function rentar($id){
+        $ifrental = rental::where('user_id', Auth::user()->id)->where('movie_id', $id)->exists();
+        
+        if(!$ifrental){
+            $rentl = new rental();
+            $rentl->days_rented = 7;
+            $rentl->active = 1;
+            $rentl->user_id = Auth::user()->id;
+            $rentl->movie_id = $id;
+            $rentl->save();
+        }
+    }
+
 }

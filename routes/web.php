@@ -23,6 +23,10 @@ Route::resource('/user','UserController');
 //rutas movie
 Route::get('/movie/details/{movie}','MovieController@details');
 Route::get('/movie/like/{movie}','MovieController@like')->middleware('auth');
+
+Route::get('/movie/shopping/{movie}', 'MovieController@shopping')->middleware(['hascard','auth']);
+Route::get('/movie/rental/{movie}', 'MovieController@rentar')->middleware(['hascard','auth']);
+
 Route::resource('/movie','MovieController')->middleware('isadmin');
 //rutas creditcard
 /* Route::get('creditcard/create','CreditCardController@create'); */

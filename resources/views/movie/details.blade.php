@@ -29,8 +29,8 @@
                         </div>
                     </li>
                     <li class="list-group-item d-flex">
-                        <button type="submit" class="btn btn-primary text-uppercase w-50 me-2" style="font-weight: 500;">Buy</button>
-                        <button type="submit" class="btn btn-primary text-uppercase w-50 ms-2" style="font-weight: 500;">Rent</button>
+                        <a href="/movie/shopping/{{$movie->id}}" type="submit" class="btn btn-primary text-uppercase w-50 me-2" style="font-weight: 500;">Buy</a>
+                        <a href="/movie/rental/{{$movie->id}}" type="submit" class="btn btn-primary text-uppercase w-50 ms-2" style="font-weight: 500;">Rent</a>
                     </li>
               </div>
         </div>
