@@ -15,6 +15,7 @@ class CreateRentalsTable extends Migration
     {
         Schema::create('rentals', function (Blueprint $table) {
             $table->bigIncrements('id');
+            $table->integer('active');
             $table->integer('days_rented');
             $table->integer('days_late')->nullable();
             $table->integer('penalty_fee')->nullable();
