@@ -4,6 +4,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Validator;
 use App\Movie;
 use App\like;
 use Auth;
@@ -41,16 +42,15 @@ class MovieController extends Controller
      */
     public function store(Request $request)
     {   
-        
-        /* $request->validate([
-            'title' => 'required|min:3',
-            'description' => 'required|min:5',
-            'stock' => 'required|numeric|min:1',
-            'rental_prince' => 'required|numeric|min:1',
-            'sale_price' => 'required|numeric|min:5',
+        $validatedData = $request->validate([
+            'title' => 'required|string|min:3',
+            'description' => 'required|string|min:15',
+            'stock' => 'required|numeric|min:10',
+            'rental_price' => 'required|numeric|min:3',
+            'sale_price' => 'required|numeric|min:9',
             'availability' => 'required|numeric|min:0',
-            'image' => 'required|mimes:jpeg,jpg,bmp,png',
-        ]); */
+            'image' => 'required|max:20000|mimes:jpeg,bmp,png,gif,jpg'
+        ]);
 
         $movie = new Movie();
 
@@ -62,14 +62,13 @@ class MovieController extends Controller
             $movie->image = $path.$filename;
         }
 
-        $movie->title = $request->title;
-        $movie->description = $request->description;
-        $movie->stock = $request->stock;
-        $movie->rental_price = $request->rental_price;
-        $movie->sale_price = $request->sale_price;
-        $movie->availability = $request->availability;
+        $movie->title = $validatedData['title'];
+        $movie->description = $validatedData['description'];
+        $movie->stock = $validatedData['stock'];
+        $movie->rental_price = $validatedData['rental_price'];
+        $movie->sale_price = $validatedData['sale_price'];
+        $movie->availability = $validatedData['availability'];
         $movie->likes = 0;
-    
         $movie->save();
     
         return redirect('/movie');
@@ -109,7 +108,16 @@ class MovieController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function update(Request $request, $id)
-    {
+    {   
+        $validatedData = $request->validate([
+            'title' => 'required|string|min:3',
+            'description' => 'required|string|min:15',
+            'stock' => 'required|numeric|min:10',
+            'rental_price' => 'required|numeric|min:3',
+            'sale_price' => 'required|numeric|min:9',
+            'availability' => 'required|numeric|min:0',
+        ]);
+
         $movie = Movie::find($id);
 
         if($request->hasFile('image')){
@@ -122,13 +130,12 @@ class MovieController extends Controller
             $movie->image = $request->old_image;
         }
 
-        $movie->title = $request->title;
-        $movie->description = $request->description;
-        $movie->stock = $request->stock;
-        $movie->rental_price = $request->rental_price;
-        $movie->sale_price = $request->sale_price;
-        $movie->availability = $request->availability;
-
+        $movie->title = $validatedData['title'];
+        $movie->description = $validatedData['description'];
+        $movie->stock = $validatedData['stock'];
+        $movie->rental_price = $validatedData['rental_price'];
+        $movie->sale_price = $validatedData['sale_price'];
+        $movie->availability = $validatedData['availability'];
         $movie->save();
 
         return redirect('/movie');
