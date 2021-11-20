@@ -11,6 +11,7 @@ use App\rental;
 use App\shopping;
 use App\credit_cards;
 use Auth;
+use DateTime;
 use SebastianBergmann\Environment\Console;
 
 class MovieController extends Controller
@@ -159,17 +160,33 @@ class MovieController extends Controller
     }
 
     public function details(Movie $movie){
-
+        
         if(!Auth::check()){
             $iflike = false;
+            $ifshop = false;
+            $ifrental = false;
         }
         else{
             $iflike = like::where('user_id', Auth::user()->id)->where('movie_id', $movie->id)->exists();
+            $ifshop = shopping::where('user_id', Auth::user()->id)->where('movie_id', $movie->id)->exists();
+            $ifrental = rental::where('user_id', Auth::user()->id)->where('movie_id', $movie->id)->where('active', 1)->exists();
+            $restante = "";
+
+            if($ifrental){
+                $vrental = rental::where('user_id', Auth::user()->id)->where('movie_id', $movie->id)->where('active', 1)->first();
+                $tiempoRes = new DateTime();
+                $diff = $vrental->created_at->diff($tiempoRes);
+                $restante = $vrental->days_rented - $diff->days;
+                $restante = "{$restante} days";
+            }
         }
 
         return view('movie.details',[
             'movie' => $movie,
             'iflike' => $iflike,
+            'ifshop' => $ifshop,
+            'ifrental' => $ifrental,
+            'restante' => $restante
         ]);
     }
 
@@ -214,7 +231,7 @@ class MovieController extends Controller
     }
     
     public function rentar($id){
-        $ifrental = rental::where('user_id', Auth::user()->id)->where('movie_id', $id)->exists();
+        $ifrental = rental::where('user_id', Auth::user()->id)->where('movie_id', $id)->where('active', 1)->exists();
         
         if(!$ifrental){
             $rentl = new rental();
@@ -224,6 +241,18 @@ class MovieController extends Controller
             $rentl->movie_id = $id;
             $rentl->save();
         }
+    }
+
+    public function returnRent($id){
+        
+            $rentl = rental::where('user_id', Auth::user()->id)->where('movie_id', $id)->first();
+
+            $rentl->active = 0;
+            $rentl->delivery_date = new DateTime();
+            $diff = $rentl->created_at->diff($rentl->delivery_date);
+            $rentl->days_late = $rentl->days_rented-$diff->days;
+            $rentl->penalty_fee = abs($rentl->days_late * 1);
+            $rentl->save();
     }
 
 }

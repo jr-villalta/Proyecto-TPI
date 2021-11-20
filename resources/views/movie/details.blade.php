@@ -27,10 +27,22 @@
                         <div class="ms-2 d-flex align-items-start">
                             <strong style="font-size: 14px;">Rental:</strong><strong class="ms-1 text-success h4">${{number_format($movie->rental_price,2,".",",")}}</strong>
                         </div>
+                        @if($ifrental)
+                        <div class="ms-2 d-flex align-items-start">
+                            <strong style="font-size: 14px;">Tiempo restante:</strong><strong class="ms-1 text-success h4">{{$restante}}</strong>
+                        </div>
+                        @endif
                     </li>
                     <li class="list-group-item d-flex">
+                        @if (!$ifshop && !$ifrental)
                         <a href="/movie/shopping/{{$movie->id}}" type="submit" class="btn btn-primary text-uppercase w-50 me-2" style="font-weight: 500;">Buy</a>
                         <a href="/movie/rental/{{$movie->id}}" type="submit" class="btn btn-primary text-uppercase w-50 ms-2" style="font-weight: 500;">Rent</a>
+                        @elseif($ifshop)
+                        <a class="btn btn-primary text-uppercase w-100 ms-2" style="font-weight: 500;">Play</a>
+                        @elseif($ifrental)
+                        <a class="btn btn-primary text-uppercase w-50 ms-2" style="font-weight: 500;">Play</a>
+                        <a href="/movie/returnRent/{{$movie->id}}" class="btn btn-primary text-uppercase w-50 ms-2" style="font-weight: 500;">Return</a>
+                        @endif
                     </li>
               </div>
         </div>
