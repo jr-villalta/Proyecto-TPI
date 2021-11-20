@@ -3,7 +3,7 @@
 @section('content')
     <div class="container">
         <div class="card my-3 p-2 p-md-5">
-            <table class="table table-bordered table-responsive" id="users" class="display" style="width:100%;">
+            <table class="table table-bordered table-responsive display nowrap" id="users" class="display"  cellspacing="0" style="width:100%;">
                 <thead>
                     <tr>
                         <th data-priority="2">Id</th>
