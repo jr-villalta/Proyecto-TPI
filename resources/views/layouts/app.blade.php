@@ -33,9 +33,6 @@
               </button>
               <div class="collapse navbar-collapse" id="navbarScroll">
                 <ul class="navbar-nav me-auto my-2 my-lg-0 navbar-nav-scroll" style="--bs-scroll-height: 100px;">
-                  {{-- <li class="nav-item">
-                    <a class="nav-link active" aria-current="page" href="#">Enlace</a>
-                  </li> --}}
                 @auth
                     @if(Auth::user()->is_admin == 1)
                     <li class="nav-item dropdown">
@@ -57,8 +54,12 @@
                         </ul>
                     </li> 
                     @else
-                    
-                             
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="/shopping/mymovies/{{Auth::user()->id}}">My movies</a>
+                    </li> 
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="">Rented movies</a>
+                    </li>         
                     @endif  
                 @endauth
                 </ul>
