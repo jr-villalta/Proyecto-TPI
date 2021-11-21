@@ -2,7 +2,21 @@
 
 @section('content')
     <div class="container">
-        <a href="/movie/create" class="btn btn-primary m-auto">Add movie</a>
+        <div class="d-flex bd-highlight mb-3">
+                <div class="me-auto p-2 bd-highlight">
+                    <a href="/movie/create" class="btn btn-primary m-auto">Add movie</a>
+                </div>
+                <div class="p-2 bd-highlight">
+                    <form class="d-flex col-12 col-md-6 col-lg-4 p-0" method="GET" action="/movie">
+                        <select name="o" class="form-select shadow-sm me-3" aria-label=".form-select-sm example" style="width:40%;">
+                            <option value="" selected>All</option>
+                            <option value="1">Availability</option>
+                            <option value="2">unavailability</option>
+                        </select>
+                    <button class="btn btn-primary px-3 shadow-sm" type="submit"><i class="fas fa-search"></i></button>
+                </form>
+            </div>
+        </div>
         <div class="card my-3 p-2 p-md-5">
             <table class="table table-bordered table-responsive" id="movies" class="display" style="width:100%;">
                 <thead>

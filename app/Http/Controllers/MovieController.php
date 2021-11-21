@@ -21,10 +21,27 @@ class MovieController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
-    {   
+
+    public function index(Request $request)
+    {
+        $request->o;
+        if($request->o == null)
+        {
+            $movies = movie::all();
+        }
+
+        if($request->o == 1)
+        {
+            $movies = Movie::where('availability', 1)->get();
+        }
+
+        if($request->o == 2)
+        {
+            $movies = Movie::where('availability', 0)->get();
+        }
+        
         return view('movie.index',[
-            'movies' => movie::all()
+            'movies' => $movies
         ]);
     }
 
