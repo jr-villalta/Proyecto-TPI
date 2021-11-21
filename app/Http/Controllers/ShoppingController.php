@@ -56,6 +56,10 @@ class ShoppingController extends Controller
         if(!$ifshop){
             $movie = Movie::where('id',$request->movie_id)->first();
             $movie->stock -= 1;
+            if($movie->stock == 0){
+                $movie->availability = 0;
+            }
+
             $shop = new shopping();
             $shop->title = $request->movie_title.'-'.str_replace(" ", "-", Auth::user()->name);
             $shop->total = $request->total;

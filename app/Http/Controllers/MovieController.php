@@ -249,16 +249,15 @@ class MovieController extends Controller
     }
     
     public function rentar($id){
-        $ifrental = rental::where('user_id', Auth::user()->id)->where('movie_id', $id)->where('active', 1)->exists();
+
+        $movie = Movie::find($id);
+        $card = credit_cards::where('user_id', Auth::user()->id)->first();
         
-        if(!$ifrental){
-            $rentl = new rental();
-            $rentl->days_rented = 7;
-            $rentl->active = 1;
-            $rentl->user_id = Auth::user()->id;
-            $rentl->movie_id = $id;
-            $rentl->save();
-        }
+        return view('movie.rental',[
+            'movie' =>$movie,
+            'card_number' => $card->card_number
+        ]);
+
     }
 
     public function returnRent($id){
