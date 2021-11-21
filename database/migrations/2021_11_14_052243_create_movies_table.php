@@ -17,6 +17,7 @@ class CreateMoviesTable extends Migration
             $table->bigIncrements('id');
             $table->string('title');
             $table->text('description');
+            $table->text('url')->nullable();
             $table->string('image');
             $table->unsignedInteger('stock');
             $table->float('rental_price');

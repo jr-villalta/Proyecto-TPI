@@ -70,7 +70,7 @@ class UsersTableSeeder extends Seeder
         $peli->sale_price = 9.99;
         $peli->availability = 1;
         $peli->likes = 0;
-
+        $peli->url = "";
         $peli->save();
         
         $peli = new Movie();
@@ -82,6 +82,7 @@ class UsersTableSeeder extends Seeder
         $peli->sale_price = 9.99;
         $peli->availability = 1;
         $peli->likes = 0;
+        $peli->url = "";
         $peli->save();
         
         $peli = new Movie();
@@ -93,6 +94,7 @@ class UsersTableSeeder extends Seeder
         $peli->sale_price = 9.99;
         $peli->availability = 1;
         $peli->likes = 0;
+        $peli->url = "";
         $peli->save();
 
         $peli = new Movie();
@@ -104,6 +106,7 @@ class UsersTableSeeder extends Seeder
         $peli->sale_price = 9.99;
         $peli->availability = 1;
         $peli->likes = 0;
+        $peli->url = "";
         $peli->save();
 
         $peli = new Movie();
@@ -115,6 +118,7 @@ class UsersTableSeeder extends Seeder
         $peli->sale_price = 9.99;
         $peli->availability = 1;
         $peli->likes = 0;
+        $peli->url = "";
         $peli->save();
 
         $peli = new Movie();
@@ -126,6 +130,7 @@ class UsersTableSeeder extends Seeder
         $peli->sale_price = 9.99;
         $peli->availability = 1;
         $peli->likes = 0;
+        $peli->url = "";
         $peli->save();
 
         $peli = new Movie();
@@ -137,6 +142,7 @@ class UsersTableSeeder extends Seeder
         $peli->sale_price = 9.99;
         $peli->availability = 1;
         $peli->likes = 0;
+        $peli->url = "";
         $peli->save();
 
         $peli = new Movie();
@@ -148,6 +154,7 @@ class UsersTableSeeder extends Seeder
         $peli->sale_price = 9.99;
         $peli->availability = 1;
         $peli->likes = 0;
+        $peli->url = "";
         $peli->save();
 
         $peli = new Movie();
@@ -159,6 +166,7 @@ class UsersTableSeeder extends Seeder
         $peli->sale_price = 9.99;
         $peli->availability = 1;
         $peli->likes = 0;
+        $peli->url = "";
         $peli->save();
 
         $peli = new Movie();
@@ -170,6 +178,7 @@ class UsersTableSeeder extends Seeder
         $peli->sale_price = 9.99;
         $peli->availability = 1;
         $peli->likes = 0;
+        $peli->url = "";
         $peli->save();
 
         $peli = new Movie();
@@ -181,6 +190,7 @@ class UsersTableSeeder extends Seeder
         $peli->sale_price = 9.99;
         $peli->availability = 1;
         $peli->likes = 0;
+        $peli->url = "";
         $peli->save();
 
         $peli = new Movie();
@@ -192,6 +202,7 @@ class UsersTableSeeder extends Seeder
         $peli->sale_price = 9.99;
         $peli->availability = 1;
         $peli->likes = 0;
+        $peli->url = "";
         $peli->save();
 
         $peli = new Movie();
@@ -203,6 +214,7 @@ class UsersTableSeeder extends Seeder
         $peli->sale_price = 9.99;
         $peli->availability = 1;
         $peli->likes = 0;
+        $peli->url = "";
         $peli->save();
 
         $peli = new Movie();
@@ -214,6 +226,7 @@ class UsersTableSeeder extends Seeder
         $peli->sale_price = 9.99;
         $peli->availability = 1;
         $peli->likes = 0;
+        $peli->url = "";
         $peli->save();
 
         $peli = new Movie();
@@ -225,6 +238,7 @@ class UsersTableSeeder extends Seeder
         $peli->sale_price = 9.99;
         $peli->availability = 1;
         $peli->likes = 0;
+        $peli->url = "";
         $peli->save();
 
         $peli = new Movie();
@@ -236,6 +250,7 @@ class UsersTableSeeder extends Seeder
         $peli->sale_price = 9.99;
         $peli->availability = 1;
         $peli->likes = 0;
+        $peli->url = "";
         $peli->save();
 
         $peli = new Movie();
@@ -247,6 +262,7 @@ class UsersTableSeeder extends Seeder
         $peli->sale_price = 9.99;
         $peli->availability = 1;
         $peli->likes = 0;
+        $peli->url = "";
         $peli->save();
 
         $peli = new Movie();
@@ -258,6 +274,7 @@ class UsersTableSeeder extends Seeder
         $peli->sale_price = 9.99;
         $peli->availability = 1;
         $peli->likes = 0;
+        $peli->url = "";
         $peli->save();
 
         $peli = new Movie();
@@ -269,6 +286,7 @@ class UsersTableSeeder extends Seeder
         $peli->sale_price = 9.99;
         $peli->availability = 1;
         $peli->likes = 0;
+        $peli->url = "";
         $peli->save();
 
         $peli = new Movie();
@@ -280,6 +298,7 @@ class UsersTableSeeder extends Seeder
         $peli->sale_price = 9.99;
         $peli->availability = 1;
         $peli->likes = 0;
+        $peli->url = "";
         $peli->save();
 
         $peli = new Movie();
@@ -291,6 +310,7 @@ class UsersTableSeeder extends Seeder
         $peli->sale_price = 9.99;
         $peli->availability = 1;
         $peli->likes = 0;
+        $peli->url = "";
         $peli->save();
 
         $peli = new Movie();
@@ -302,6 +322,7 @@ class UsersTableSeeder extends Seeder
         $peli->sale_price = 9.99;
         $peli->availability = 1;
         $peli->likes = 0;
+        $peli->url = "";
         $peli->save();
 
         $peli = new Movie();
@@ -313,6 +334,7 @@ class UsersTableSeeder extends Seeder
         $peli->sale_price = 9.99;
         $peli->availability = 1;
         $peli->likes = 0;
+        $peli->url = "";
         $peli->save();
 
         $peli = new Movie();
@@ -324,6 +346,7 @@ class UsersTableSeeder extends Seeder
         $peli->sale_price = 9.99;
         $peli->availability = 1;
         $peli->likes = 0;
+        $peli->url = "";
         $peli->save();
 
         $peli = new Movie();
@@ -335,6 +358,7 @@ class UsersTableSeeder extends Seeder
         $peli->sale_price = 9.99;
         $peli->availability = 1;
         $peli->likes = 0;
+        $peli->url = "";
         $peli->save();
 
         // -------------------------- likes ---------------------------------------------
