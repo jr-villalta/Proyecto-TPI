@@ -106,7 +106,7 @@ class UsersTableSeeder extends Seeder
         $peli->sale_price = 9.99;
         $peli->availability = 1;
         $peli->likes = 0;
-        $peli->url = "";
+        $peli->url = "https://www261.sbcdnvideo.com/hls/tysxeehxr666j6cdaa7bvgsue75rbylyooff2vhj3vkzu7nb5vuddgznksyq/index-v1-a1.m3u8";
         $peli->save();
 
         $peli = new Movie();
