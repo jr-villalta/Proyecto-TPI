@@ -16,20 +16,20 @@ class RentalController extends Controller
      */
     public function index()
     {
-        /* $shoppings = shopping::all();
+        $rentals = rental::all();
 
-        return view('shopping.index',[
-            'shoppings' => $shoppings 
-        ]); */
+        return view('rental.index',[
+            'rentals' => $rentals 
+        ]);
     }
 
     public function indexbyuser($id)
     {
-        /* $shoppings = shopping::where('user_id', $id)->get();
+        $rentals = rental::where('user_id', $id)->get();
 
-        return view('shopping.indexbyuser',[
-            'shoppings' => $shoppings 
-        ]); */
+        return view('rental.index',[
+            'rentals' => $rentals 
+        ]);
     }
 
     /**
