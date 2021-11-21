@@ -15,7 +15,11 @@ class ShoppingController extends Controller
      */
     public function index()
     {
-        //
+        $shoppings = shopping::all();
+
+        return view('shopping.index',[
+            'shoppings' => $shoppings 
+        ]);
     }
 
     public function indexbyuser($id)
@@ -45,7 +49,7 @@ class ShoppingController extends Controller
      */
     public function store(Request $request)
     {   
-
+        
         $ifshop = shopping::where('user_id', Auth::user()->id)->where('movie_id', $request->movie_id)->exists();
         
         if(!$ifshop){
