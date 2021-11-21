@@ -25,7 +25,6 @@
                                     </button>
                                     <ul class="dropdown-menu" style="min-width:5rem;">
                                         <li><a class="dropdown-item text-primary" href=""><i class="far fa-eye me-1"></i>Details</a></li>
-                                        <li><a class="dropdown-item text-warning" href=""><i class="far fa-edit me-1"></i>Edit</a></li>
                                     </ul>
                                 </div>
                             </td>
