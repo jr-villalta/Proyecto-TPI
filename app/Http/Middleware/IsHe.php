@@ -1,12 +1,11 @@
 <?php
 
 namespace App\Http\Middleware;
-use Illuminate\Http\Request;
+
 use Closure;
 use Auth;
-use App\shopping;
 
-class HasMovie
+class Ishe
 {
     /**
      * Handle an incoming request.
@@ -16,15 +15,14 @@ class HasMovie
      * @return mixed
      */
     public function handle($request, Closure $next)
-    {   
+    {
         $arrUri = explode('/',$request->getRequestUri());
-        $movie_id = end($arrUri);
-
-        $hasmovie = shopping::where('user_id', Auth::user()->id)->where('movie_id', $movie_id)->exists();
-        if ($hasmovie) {
+        $user_id = end($arrUri);
+        
+        if (is_numeric($user_id) && $user_id == Auth::user()->id) {
             return $next($request);
         }
 
-        return redirect('/movie/details/'.$movie_id);
+        return redirect('/home');
     }
 }
