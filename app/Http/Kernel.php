@@ -64,6 +64,7 @@ class Kernel extends HttpKernel
         'isadmin' => \App\Http\Middleware\IsAdmin::class,
         'hascard' => \App\Http\Middleware\hascard::class,
         'hasmovie' => \App\Http\Middleware\HasMovie::class,
+        'ishe' => \App\Http\Middleware\IsHe::class,
     ];
 
     /**
