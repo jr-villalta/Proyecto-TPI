@@ -17,7 +17,7 @@
                         <tr>
                             <td>Example</td>
                             <td>{{$shopping->created_at}}</td>
-                            <td>0.0</td>
+                            <td>{{$shopping->total}}</td>
                             <td class="text-center">
                                 <div class="btn-group">
                                     <button type="button" class="btn btn-primary dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
