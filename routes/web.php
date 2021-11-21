@@ -22,7 +22,7 @@ Route::resource('/user','UserController');
 // Route::get('/user/setting', [UserController::class, 'setting']); laravel 8+
 //rutas movie
 Route::get('/movie/details/{movie}','MovieController@details');
-Route::get('/movie/play/{movie}','MovieController@play');
+Route::get('/movie/play/{movie}','MovieController@play')->middleware('auth','hasmovie');
 Route::get('/movie/like/{movie}','MovieController@like')->middleware('auth');
 Route::get('/movie/shopping/{movie}', 'MovieController@shopping')->middleware(['hascard','auth']);
 Route::get('/movie/rental/{movie}', 'MovieController@rentar')->middleware(['hascard','auth']);

@@ -6,18 +6,18 @@
             <table class="table table-bordered table-responsive" id="movies" class="display" style="width:100%;">
                 <thead>
                     <tr>
-                        <th data-priority="1">Title</th>
-                        <th data-priority="2">Acquisition date</th>
-                        <th data-priority="1">Total</th>
-                        <th data-priority="1">Actions</th>
+                        <th>Title</th>
+                        <th>Total</th>
+                        <th>Acquisition date</th>
+                        <th>Actions</th>
                     </tr>
                 </thead>
                 <tbody>
                     @foreach ($shoppings as $shopping)
                         <tr>
                             <td>Example</td>
-                            <td>{{$shopping->created_at}}</td>
                             <td>{{$shopping->total}}</td>
+                            <td>{{$shopping->created_at}}</td>
                             <td class="text-center">
                                 <div class="btn-group">
                                     <button type="button" class="btn btn-primary dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
@@ -34,8 +34,8 @@
                 <tfoot>
                     <tr>
                         <th>Title</th>
-                        <th>Acquisition date</th>
                         <th>Total</th>
+                        <th>Acquisition date</th>
                         <th>Actions</th>
                     </tr>
                 </tfoot>
