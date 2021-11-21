@@ -53,5 +53,3 @@
 		})	
 	</script>	
 @endsection
-
-{{-- columnDefs: [{responsivePriority: 2,targets: 0,visible: true,searchable: true}] --}}

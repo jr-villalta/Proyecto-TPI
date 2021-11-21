@@ -36,3 +36,4 @@ Route::delete('creditcard/{creditcard}','CreditCardController@destroy')->name('c
 //rutas shopping
 Route::post('shopping','ShoppingController@store')->name('shopping.store');
 Route::get('/shopping/mymovies/{id}','ShoppingController@indexbyuser')->name('shopping.indexbyuser');
+Route::get('/shopping','ShoppingController@index')->name('shopping.index');

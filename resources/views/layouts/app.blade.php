@@ -50,7 +50,7 @@
                             {{ __('Records') }} <span class="caret"></span>
                         </a>
                         <ul class="dropdown-menu" aria-labelledby="navbarScrollingDropdown" style="min-width:5rem;">
-                            <a class="dropdown-item" href="/movie"> {{ __('Sales') }}</a>
+                            <a class="dropdown-item" href="/shopping"> {{ __('Sales') }}</a>
                             <a class="dropdown-item" href="#"> {{ __('Rental') }}</a>
                         </ul>
                     </li> 

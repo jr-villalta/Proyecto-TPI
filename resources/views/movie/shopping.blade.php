@@ -11,6 +11,7 @@
                     <form action="/shopping" method="POST" class="col-12 col-sm-6 mt-3 mt-sm-0 d-flex flex-column justify-content-center">
                         @csrf
                         <input type="number" name="movie_id" id="" hidden value="{{$movie->id}}">
+                        <input type="text" name="movie_title" id="" hidden value="{{$movie->title}}">
                         <input type="number" name="total" id="" hidden value="{{$movie->sale_price}}">
                         <div class="">
                             <div class="me-2 mt-1 d-flex align-items-start">

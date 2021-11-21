@@ -9,6 +9,7 @@ use App\Movie;
 use App\rental;
 use App\shopping;
 use App\credit_cards;
+use App\like;
 
 class User extends Authenticatable
 {
@@ -25,6 +26,9 @@ class User extends Authenticatable
     }
     public function cards(){
         return $this->hasMany(credit_cards::class);
+    }
+    public function likes(){
+        return $this->hasMany(like::class);
     }
     /**
      * The attributes that are mass assignable.

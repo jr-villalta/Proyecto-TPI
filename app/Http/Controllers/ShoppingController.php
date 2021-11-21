@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\shopping;
+use App\Movie;
 use Auth;
 
 class ShoppingController extends Controller
@@ -15,7 +16,11 @@ class ShoppingController extends Controller
      */
     public function index()
     {
-        //
+        $shoppings = shopping::all();
+
+        return view('shopping.index',[
+            'shoppings' => $shoppings 
+        ]);
     }
 
     public function indexbyuser($id)
@@ -44,15 +49,20 @@ class ShoppingController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function store(Request $request)
-    {
+    {   
+        
         $ifshop = shopping::where('user_id', Auth::user()->id)->where('movie_id', $request->movie_id)->exists();
         
         if(!$ifshop){
+            $movie = Movie::where('id',$request->movie_id)->first();
+            $movie->stock -= 1;
             $shop = new shopping();
+            $shop->title = $request->movie_title.'-'.str_replace(" ", "-", Auth::user()->name);
             $shop->total = $request->total;
             $shop->user_id = Auth::user()->id;
             $shop->movie_id = $request->movie_id;
             $shop->save();
+            $movie->save();
         }
 
         return redirect('/movie/details/'.$request->movie_id); 

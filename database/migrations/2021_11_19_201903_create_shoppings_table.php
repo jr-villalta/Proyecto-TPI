@@ -15,6 +15,7 @@ class CreateShoppingsTable extends Migration
     {
         Schema::create('shoppings', function (Blueprint $table) {
             $table->bigIncrements('id');
+            $table->string('title');
             $table->unsignedBigInteger('user_id');
             $table->unsignedBigInteger('movie_id');
             $table->double('total');
