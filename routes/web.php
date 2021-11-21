@@ -37,3 +37,8 @@ Route::delete('creditcard/{creditcard}','CreditCardController@destroy')->name('c
 Route::post('shopping','ShoppingController@store')->name('shopping.store');
 Route::get('/shopping/mymovies/{id}','ShoppingController@indexbyuser')->name('shopping.indexbyuser')->middleware('auth','ishe');
 Route::get('/shopping','ShoppingController@index')->name('shopping.index')->middleware('isadmin');
+//rutas rental
+Route::post('rental','RentalController@store')->name('rental.store');
+Route::get('/rental/mymovies/{id}','RentalController@indexbyuser')->name('rental.indexbyuser')->middleware('auth','ishe');
+Route::get('/rental','RentalController@index')->name('rental.index')->middleware('isadmin');
+

@@ -15,6 +15,7 @@ class CreateRentalsTable extends Migration
     {
         Schema::create('rentals', function (Blueprint $table) {
             $table->bigIncrements('id');
+            $table->string('title');
             $table->integer('active');
             $table->integer('days_rented');
             $table->integer('days_late')->nullable();
@@ -22,6 +23,7 @@ class CreateRentalsTable extends Migration
             $table->timestamp('delivery_date')->nullable();
             $table->unsignedBigInteger('user_id');
             $table->unsignedBigInteger('movie_id');
+            $table->double('total');
             $table->foreign('user_id')->references('id')->on('users');
             $table->foreign('movie_id')->references('id')->on('movies');
             $table->timestamps();
