@@ -9,6 +9,7 @@ use App\Movie;
 use App\like;
 use App\rental;
 use App\shopping;
+use App\credit_cards;
 use Auth;
 use DateTime;
 use SebastianBergmann\Environment\Console;
@@ -236,14 +237,14 @@ class MovieController extends Controller
     }
 
     public function shopping($id){
-        $ifshop = shopping::where('user_id', Auth::user()->id)->where('movie_id', $id)->exists();
+
+        $movie = Movie::find($id);
+        $card = credit_cards::where('user_id', Auth::user()->id)->first();
         
-        if(!$ifshop){
-            $shop = new shopping();
-            $shop->user_id = Auth::user()->id;
-            $shop->movie_id = $id;
-            $shop->save();
-        }
+        return view('movie.shopping',[
+            'movie' =>$movie,
+            'card_number' => $card->card_number
+        ]);
     }
     
     public function rentar($id){
@@ -269,6 +270,15 @@ class MovieController extends Controller
             $rentl->days_late = $rentl->days_rented-$diff->days;
             $rentl->penalty_fee = abs($rentl->days_late * 1);
             $rentl->save();
+    }
+
+    public function play($id){
+
+        $movie = Movie::find($id);
+
+        return view('movie.play',[
+            'movie' =>$movie
+        ]);
     }
 
 }
