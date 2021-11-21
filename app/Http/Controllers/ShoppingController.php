@@ -44,11 +44,13 @@ class ShoppingController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function store(Request $request)
-    {
+    {   
+
         $ifshop = shopping::where('user_id', Auth::user()->id)->where('movie_id', $request->movie_id)->exists();
         
         if(!$ifshop){
             $shop = new shopping();
+            $shop->title = $request->movie_title.'-'.str_replace(" ", "-", Auth::user()->name);
             $shop->total = $request->total;
             $shop->user_id = Auth::user()->id;
             $shop->movie_id = $request->movie_id;

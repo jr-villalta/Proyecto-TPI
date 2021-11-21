@@ -15,7 +15,7 @@
                 <tbody>
                     @foreach ($shoppings as $shopping)
                         <tr>
-                            <td>Example</td>
+                            <td>{{$shopping->title}}</td>
                             <td>{{$shopping->total}}</td>
                             <td>{{$shopping->created_at}}</td>
                             <td class="text-center">
@@ -24,7 +24,7 @@
                                     Action
                                     </button>
                                     <ul class="dropdown-menu" style="min-width:5rem;">
-                                        <li><a class="dropdown-item text-primary" href=""><i class="far fa-eye me-1"></i>Details</a></li>
+                                        <li><a class="dropdown-item text-primary" href="/movie/details/{{$shopping->movie_id}}"><i class="far fa-eye me-1"></i>Watch</a></li>
                                     </ul>
                                 </div>
                             </td>
