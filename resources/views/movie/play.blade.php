@@ -1,24 +1,16 @@
 @extends('layouts.app')
+
 @section('content')
 <div class="container">
-    <div class="flowplayer fixed-controls no-toggle no-time play-button obj" style="width: 100%; height: 80%; margin:0 auto; z-index: 1000;" data-key="$812975748999788" data-live="true" data-share="false" data-ratio="0.5625"  data-logo=""> 
-        <video autoplay="true" stretch="true">      
-            <source type="application/x-mpegurl" src="{{$movie->url}}"> 
-        </video>    
-    </div> 
     <h1 class="h4 p-3 text-dark bg-light" style="border-radius: 5px;">{{$movie->title}}</h1>
-
+    <div id="async-player" data-player-id="cdcc4202-ef0b-4e03-a43a-d1fcf6d83157">
+        <script src="//cdn.flowplayer.com/players/ffdf2c44-aa29-4df8-a270-3a199a1b119e/native/flowplayer.async.js">
+          {
+            "src": "{{$movie->url}}"
+          }
+        </script>
+      </div>
 </div>
 @endsection
 @section('script')
-<script src="//code.jquery.com/jquery-1.12.4.min.js"></script> 
-<script src="//releases.flowplayer.org/7.0.4/commercial/flowplayer.min.js"></script> 
-<script src="//releases.flowplayer.org/hlsjs/flowplayer.hlsjs.min.js"></script>  
-<script> 
-    flowplayer(function (api) { 
-        api.on("load", function (e, api, video) { 
-            $("#vinfo").text(api.engine.engineName + " engine playing " + video.type); 
-        }); 
-    }); 
-</script>
 @endsection
