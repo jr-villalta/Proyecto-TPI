@@ -39,7 +39,7 @@
                         <a href="/movie/shopping/{{$movie->id}}" type="submit" class="btn btn-primary text-uppercase w-50 me-2" style="font-weight: 500;">Buy</a>
                         <a href="/movie/rental/{{$movie->id}}" type="submit" class="btn btn-primary text-uppercase w-50 ms-2" style="font-weight: 500;">Rent</a>
                         @elseif($ifshop)
-                        <a class="btn btn-primary text-uppercase w-100 ms-2" style="font-weight: 500;">Play</a>
+                        <a href="/movie/play/{{$movie->id}}" class="btn btn-primary text-uppercase w-100 ms-2" style="font-weight: 500;">Play</a>
                         @elseif($ifrental)
                         <a href="/movie/play/{{$movie->id}}" class="btn btn-primary text-uppercase w-50 ms-2" style="font-weight: 500;">Play</a>
                         <a href="/movie/returnRent/{{$movie->id}}" class="btn btn-primary text-uppercase w-50 ms-2" style="font-weight: 500;">Return</a>
