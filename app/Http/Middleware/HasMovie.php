@@ -1,6 +1,8 @@
 <?php
 
 namespace App\Http\Middleware;
+
+use App\rental;
 use Illuminate\Http\Request;
 use Closure;
 use Auth;
@@ -21,6 +23,10 @@ class HasMovie
         $movie_id = end($arrUri);
 
         $hasmovie = shopping::where('user_id', Auth::user()->id)->where('movie_id', $movie_id)->exists();
+        if ($hasmovie) {
+            return $next($request);
+        }
+        $hasmovie = rental::where('user_id', Auth::user()->id)->where('movie_id', $movie_id)->where('active', 1)->exists();
         if ($hasmovie) {
             return $next($request);
         }
