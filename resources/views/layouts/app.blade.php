@@ -35,6 +35,19 @@
               <div class="collapse navbar-collapse" id="navbarScroll">
                 <ul class="navbar-nav me-auto my-2 my-lg-0 navbar-nav-scroll" style="--bs-scroll-height: 100px;">
                 @auth
+                    <li class="nav-item dropdown">
+                        <a id="navbarScrollingDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false" > {{-- v-pre --}}
+                            {{ __('Movie shelf') }} <span class="caret"></span>
+                        </a>
+                        <ul class="dropdown-menu" aria-labelledby="navbarScrollingDropdown" style="min-width:5rem;">
+                            <a class="dropdown-item" href="/shopping/mymovies/{{Auth::user()->id}}"> {{ __('My movies') }}</a>
+                            <a class="dropdown-item" href="/rental/mymovies/{{Auth::user()->id}}"> {{ __('Rented movies') }}</a>
+                        </ul>
+                        {{-- <ul class="dropdown-menu" aria-labelledby="navbarScrollingDropdown" style="min-width:5rem;">
+                            <a class="nav-link active" aria-current="page" href="/shopping/mymovies/{{Auth::user()->id}}"></a>
+                            <a class="nav-link active" aria-current="page" href="">Rented movies</a>
+                        </ul> --}}
+                    </li>
                     @if(Auth::user()->is_admin == 1)
                     <li class="nav-item dropdown">
                         <a id="navbarScrollingDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false" > {{-- v-pre --}}
@@ -51,16 +64,11 @@
                         </a>
                         <ul class="dropdown-menu" aria-labelledby="navbarScrollingDropdown" style="min-width:5rem;">
                             <a class="dropdown-item" href="/shopping"> {{ __('Sales') }}</a>
-                            <a class="dropdown-item" href="#"> {{ __('Rental') }}</a>
+                            <a class="dropdown-item" href="/rental"> {{ __('Rental') }}</a>
                         </ul>
                     </li> 
                     @else
-                    <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="/shopping/mymovies/{{Auth::user()->id}}">My movies</a>
-                    </li> 
-                    <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="">Rented movies</a>
-                    </li>         
+   
                     @endif  
                 @endauth
                 </ul>
