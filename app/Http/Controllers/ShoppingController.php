@@ -49,6 +49,7 @@ class ShoppingController extends Controller
         
         if(!$ifshop){
             $shop = new shopping();
+            $shop->total = $request->total;
             $shop->user_id = Auth::user()->id;
             $shop->movie_id = $request->movie_id;
             $shop->save();

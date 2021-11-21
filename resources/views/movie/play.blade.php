@@ -11,7 +11,7 @@
     margin-top: 6%; 
     z-index: 1000;" data-key="$812975748999788" data-live="true" data-share="false" data-ratio="0.5625"  data-logo=""> 
     <video autoplay="true" stretch="true">      
-        <source type="application/x-mpegurl" src="https://www261.sbcdnvideo.com/hls/tysxeehxr666j6cdaa7bvgsue75rbylyooff2vhj3vkzu7nb5vuddgznksyq/index-v1-a1.m3u8"> 
+        <source type="application/x-mpegurl" src="{{$movie->url}}"> 
     </video>    
 </div> 
 
