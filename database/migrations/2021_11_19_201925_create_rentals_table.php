@@ -18,7 +18,7 @@ class CreateRentalsTable extends Migration
             $table->integer('active');
             $table->integer('days_rented');
             $table->integer('days_late')->nullable();
-            $table->integer('penalty_fee')->nullable();
+            $table->double('penalty_fee')->nullable();
             $table->timestamp('delivery_date')->nullable();
             $table->unsignedBigInteger('user_id');
             $table->unsignedBigInteger('movie_id');
