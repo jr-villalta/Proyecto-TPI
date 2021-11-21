@@ -21,15 +21,16 @@
                     <li class="list-group-item"><strong class="me-2">Title:</strong>{{$movie->title}}</li>
                     <li class="list-group-item" style="text-align: justify;"><strong class="me-2">Description:</strong>{{$movie->description}}</li>
                     <li class="list-group-item d-flex">
+                        @if($ifrental)
+                        <div class="alert alert-success w-100 mb-0 text-center" style="font-weight: bold;" role="alert">
+                            Time remaining to return: {{$restante}}
+                          </div>
+                        @else
                         <div class="me-2 d-flex align-items-start">
                             <strong style="font-size: 14px;">Sale:</strong><strong class="ms-1 text-success h4">${{number_format($movie->sale_price,2,".",",")}}</strong>
                         </div>
                         <div class="ms-2 d-flex align-items-start">
                             <strong style="font-size: 14px;">Rental:</strong><strong class="ms-1 text-success h4">${{number_format($movie->rental_price,2,".",",")}}</strong>
-                        </div>
-                        @if($ifrental)
-                        <div class="ms-2 d-flex align-items-start">
-                            <strong style="font-size: 14px;">Tiempo restante:</strong><strong class="ms-1 text-success h4">{{$restante}}</strong>
                         </div>
                         @endif
                     </li>
@@ -40,7 +41,7 @@
                         @elseif($ifshop)
                         <a class="btn btn-primary text-uppercase w-100 ms-2" style="font-weight: 500;">Play</a>
                         @elseif($ifrental)
-                        <a class="btn btn-primary text-uppercase w-50 ms-2" style="font-weight: 500;">Play</a>
+                        <a href="/movie/play/{{$movie->id}}" class="btn btn-primary text-uppercase w-50 ms-2" style="font-weight: 500;">Play</a>
                         <a href="/movie/returnRent/{{$movie->id}}" class="btn btn-primary text-uppercase w-50 ms-2" style="font-weight: 500;">Return</a>
                         @endif
                     </li>

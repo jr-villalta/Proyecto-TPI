@@ -255,4 +255,13 @@ class MovieController extends Controller
             $rentl->save();
     }
 
+    public function play($id){
+
+        $movie = Movie::find($id);
+
+        return view('movie.play',[
+            'movie' =>$movie
+        ]);
+    }
+
 }

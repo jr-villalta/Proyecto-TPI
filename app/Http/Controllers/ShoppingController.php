@@ -18,6 +18,15 @@ class ShoppingController extends Controller
         //
     }
 
+    public function indexbyuser($id)
+    {
+        $shoppings = shopping::where('user_id', $id)->get();
+
+        return view('shopping.indexbyuser',[
+            
+        ]);
+    }
+
     /**
      * Show the form for creating a new resource.
      *
