@@ -178,7 +178,8 @@ class MovieController extends Controller
 
     public function details(Movie $movie){
         
-        $restante = "";
+        $restante = 0;
+        $brestante = 0;
         
         if(!Auth::check()){
             $iflike = false;
@@ -195,7 +196,6 @@ class MovieController extends Controller
                 $tiempoRes = new DateTime();
                 $diff = $vrental->created_at->diff($tiempoRes);
                 $restante = $vrental->days_rented - $diff->days;
-                $restante = "{$restante} days";
             }
         }
 
