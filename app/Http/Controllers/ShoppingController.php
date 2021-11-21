@@ -23,7 +23,7 @@ class ShoppingController extends Controller
         $shoppings = shopping::where('user_id', $id)->get();
 
         return view('shopping.indexbyuser',[
-            
+            'shoppings' => $shoppings 
         ]);
     }
 
