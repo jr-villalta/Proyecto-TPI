@@ -26,39 +26,41 @@ class HomeController extends Controller
     {   
         $n = 10;
 
-        if($request->s == null && $request->o == null){
+        if($request->o == null && $request->s == null){
             $movies = Movie::where('availability', 1)->orderBy('title')->paginate($n);
-            $movies->withPath('/?o=&s=');
-        }else{
-            if($request->s == null && $request->o != null){
-                $orderby = $request->get('o');
-                if($orderby == 'title'){
-                    $movies = Movie::where('availability', 1)->orderBy($orderby)->paginate($n);
-                }
-                else{
-                    $movies = Movie::where('availability', 1)->orderBy($orderby,'DESC')->paginate($n);
-                }
-                $movies->withPath('/?o='.$orderby.'&s=');
-            }
-            if($request->s != null && $request->o == null){
-                $search = $request->get('s');
-                $movies = Movie::where('availability', 1)->orderBy('title')->title($search)->paginate($n);
-                $movies->withPath('/?o=&s='.$search);
-            }
-            if($request->s != null && $request->o != null){
-                $orderby = $request->get('o');
-                $search = $request->get('s');
-                if($orderby == 'title'){
-                    $movies = Movie::where('availability', 1)->orderBy($orderby)->title($search)->paginate($n);
-                }
-                else{
-                    $movies = Movie::where('availability', 1)->orderBy($orderby,'DESC')->title($search)->paginate($n);
-                }
-                $movies->withPath('/?o='.$orderby.'&s='.$search);
-            }
         }
+        if($request->o != null && $request->s == null){
+            $movies = $this->orderBy($request->o,$n);
+        }
+        if($request->o == null && $request->s != null){
+            $movies = $this->searchMovies($request->s,$n);
+        }
+
         return view('home',[
             'movies' => $movies
         ]);
     }   
+
+    public function searchMovies(string $search, int $n){
+        $movies = Movie::where('availability', 1)->orderBy('title')->title($search)->paginate($n);
+        $movies->withPath('/?s='.$search);
+        return $movies;
+    }
+
+    public function orderBy(string $request, int $n){
+
+        if($request == 'title'){
+            $movies = Movie::where('availability', 1)->orderBy($request)->paginate($n);
+        }
+        if($request == 'likes'){
+            $movies = Movie::where('availability', 1)->orderBy($request,'DESC')->paginate($n);
+        }
+        else{
+            $movies = Movie::where('availability', 1)->orderBy('title')->paginate($n);
+        }
+
+        $movies->withPath('/?o='.$request);
+        return $movies;
+    }
 }
+

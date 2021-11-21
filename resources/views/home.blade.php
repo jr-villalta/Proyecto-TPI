@@ -5,7 +5,7 @@
 <div class="div-container">
    <div class="w-100 d-flex justify-content-end mx-0 mb-4 row">
       <form class="d-flex col-12 col-md-6 col-lg-4 p-0" method="GET" action="/home">
-         <select name="o" class="form-select shadow-sm me-3" aria-label=".form-select-sm example" style="width:40%;">
+         <select name="o" class="form-select shadow-sm me-3" aria-label=".form-select-sm example" style="width:40%;" onchange="this.form.submit()">
             <option value="" selected>Order by</option>
             <option value="title">Title</option>
             <option value="likes">Likes</option>

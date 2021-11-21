@@ -2,18 +2,17 @@
 
 @section('content')
     <div class="container">
-        <div class="d-flex bd-highlight mb-3">
-                <div class="me-auto p-2 bd-highlight">
-                    <a href="/movie/create" class="btn btn-primary m-auto">Add movie</a>
-                </div>
-                <div class="p-2 bd-highlight">
-                    <form class="d-flex col-12 col-md-6 col-lg-4 p-0" method="GET" action="/movie">
-                        <select name="o" class="form-select shadow-sm me-3" aria-label=".form-select-sm example" style="width:40%;">
-                            <option value="" selected>All</option>
-                            <option value="1">Availability</option>
-                            <option value="2">unavailability</option>
-                        </select>
-                    <button class="btn btn-primary px-3 shadow-sm" type="submit"><i class="fas fa-search"></i></button>
+        <div class="mb-3 row">
+            <div class="col">
+                <a href="/movie/create" class="btn btn-primary m-auto">Add movie</a>
+            </div>
+            <div class="col d-flex justify-content-end">
+                <form class="d-flex col-12 col-md-6 col-lg-4 p-0" method="GET" action="/movie">
+                    <select name="o" class="form-select shadow-sm" aria-label=".form-select-sm example" style="width:100%;" onchange="this.form.submit()">
+                        <option value="" selected>All</option>
+                        <option value="1">Available</option>
+                        <option value="2">Not available</option>
+                    </select>
                 </form>
             </div>
         </div>

@@ -178,6 +178,8 @@ class MovieController extends Controller
 
     public function details(Movie $movie){
         
+        $restante = "";
+        
         if(!Auth::check()){
             $iflike = false;
             $ifshop = false;
@@ -187,7 +189,6 @@ class MovieController extends Controller
             $iflike = like::where('user_id', Auth::user()->id)->where('movie_id', $movie->id)->exists();
             $ifshop = shopping::where('user_id', Auth::user()->id)->where('movie_id', $movie->id)->exists();
             $ifrental = rental::where('user_id', Auth::user()->id)->where('movie_id', $movie->id)->where('active', 1)->exists();
-            $restante = "";
 
             if($ifrental){
                 $vrental = rental::where('user_id', Auth::user()->id)->where('movie_id', $movie->id)->where('active', 1)->first();
