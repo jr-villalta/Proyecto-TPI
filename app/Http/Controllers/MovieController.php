@@ -184,17 +184,18 @@ class MovieController extends Controller
     public function details(Movie $movie){
         
         $restante = 0;
-        $brestante = 0;
         
         if(!Auth::check()){
             $iflike = false;
             $ifshop = false;
             $ifrental = false;
+            $ifhaverental = false;
         }
         else{
             $iflike = like::where('user_id', Auth::user()->id)->where('movie_id', $movie->id)->exists();
             $ifshop = shopping::where('user_id', Auth::user()->id)->where('movie_id', $movie->id)->exists();
             $ifrental = rental::where('user_id', Auth::user()->id)->where('movie_id', $movie->id)->where('active', 1)->exists();
+            $ifhaverental = rental::where('user_id', Auth::user()->id)->where('active', 1)->exists();
 
             if($ifrental){
                 $vrental = rental::where('user_id', Auth::user()->id)->where('movie_id', $movie->id)->where('active', 1)->first();
@@ -209,7 +210,8 @@ class MovieController extends Controller
             'iflike' => $iflike,
             'ifshop' => $ifshop,
             'ifrental' => $ifrental,
-            'restante' => $restante
+            'restante' => $restante,
+            'ifhaverental' => $ifhaverental
         ]);
     }
 

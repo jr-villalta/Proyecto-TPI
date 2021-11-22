@@ -39,20 +39,36 @@
                         @endif
                     </li>
                     <li class="list-group-item d-flex">
-                        @if (!$ifshop && !$ifrental)
-                        <a href="/movie/shopping/{{$movie->id}}" type="submit" class="btn btn-primary text-uppercase w-50 me-2" style="font-weight: 500;">Buy</a>
-                        <a href="/movie/rental/{{$movie->id}}" type="submit" class="btn btn-primary text-uppercase w-50 ms-2" style="font-weight: 500;">Rent</a>
-                        @elseif($ifshop)
-                        <a href="/movie/play/{{$movie->id}}" class="btn btn-primary text-uppercase w-100 ms-2" style="font-weight: 500;">Play</a>
-                        @elseif($ifrental)
-                        <a href="/movie/play/{{$movie->id}}" class="btn btn-primary text-uppercase w-50 ms-2" style="font-weight: 500;">Play</a>
-                        <a href="/movie/returnRent/{{$movie->id}}" class="btn btn-primary text-uppercase w-50 ms-2" style="font-weight: 500;">Return</a>
+                        @if (!$ifshop && !$ifrental && $ifhaverental) 
+                        <a href="/movie/shopping/{{$movie->id}}" type="submit" class="btn btn-primary text-uppercase w-50 me-2" style="font-weight: 500;">Buy</a> 
+                        <a id="btnRantalG" type="submit" class="btn btn-secondary text-uppercase w-50 ms-2" style="font-weight: 500;">Rent</a> 
+                        @elseif($ifshop) 
+                        @elseif (!$ifshop && !$ifrental) 
+                        <a href="/movie/shopping/{{$movie->id}}" type="submit" class="btn btn-primary text-uppercase w-50 me-2" style="font-weight: 500;">Buy</a> 
+                        <a href="/movie/rental/{{$movie->id}}" type="submit" class="btn btn-primary text-uppercase w-50 ms-2" style="font-weight: 500;">Rent</a> 
+                        @elseif($ifshop) 
+                        <a href="/movie/play/{{$movie->id}}" class="btn btn-primary text-uppercase w-100 ms-2" style="font-weight: 500;">Play</a> 
+                        @elseif($ifrental) 
+                        <a href="/movie/play/{{$movie->id}}" class="btn btn-primary text-uppercase w-50 ms-2" style="font-weight: 500;">Play</a> 
+                        <a href="/movie/returnRent/{{$movie->id}}" class="btn btn-primary text-uppercase w-50 ms-2" style="font-weight: 500;">Return</a> 
                         @endif
                     </li>
               </div>
         </div>
     </div>
 </div>
+
+<script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+<script>
+    document.getElementById("btnRantalG").addEventListener("click", function(){
+        Swal.fire({
+            icon: 'error',
+            title: 'Oops...',
+            text: 'Only one rental at a time!'
+        })
+    });
+</script>
+
 @endsection
 
 
