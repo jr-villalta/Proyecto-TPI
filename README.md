@@ -1,5 +1,18 @@
 # Proyecto-TPI
 
+<h1 align="center"> Netfilm 🎬</h1>
+  
+<p align="center">
+  <img width="200" src="https://www.linkpicture.com/q/netfilm-150.png" alt="logo">
+</p>
+
+  
+## Descripción
+  
+Netfilm es un sitio web donde puedes ver o rentar películas online desde la comodidad de tu casa.
+  
+Website: https://netfilm-ues.herokuapp.com
+
 ## Integrantes
 
 | Nombres                                 | Carnet      |
