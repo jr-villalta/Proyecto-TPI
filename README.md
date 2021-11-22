@@ -45,6 +45,7 @@ Website: https://netfilm-ues.herokuapp.com
 4. Abrir xampp y crear una base de datos con el nombre de **netfilm**
 
 5. Generar Datos iniciales.
+
 Método 1:
 ```sh
   composer dump-autoload
