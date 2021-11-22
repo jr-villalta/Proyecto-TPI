@@ -42,8 +42,7 @@
                         @if (!$ifshop && !$ifrental && $ifhaverental) 
                         <a href="/movie/shopping/{{$movie->id}}" type="submit" class="btn btn-primary text-uppercase w-50 me-2" style="font-weight: 500;">Buy</a> 
                         <a id="btnRantalG" type="submit" class="btn btn-secondary text-uppercase w-50 ms-2" style="font-weight: 500;">Rent</a> 
-                        @elseif($ifshop) 
-                        @elseif (!$ifshop && !$ifrental) 
+                        @elseif (!$ifshop && !$ifrental && !$ifhaverental) 
                         <a href="/movie/shopping/{{$movie->id}}" type="submit" class="btn btn-primary text-uppercase w-50 me-2" style="font-weight: 500;">Buy</a> 
                         <a href="/movie/rental/{{$movie->id}}" type="submit" class="btn btn-primary text-uppercase w-50 ms-2" style="font-weight: 500;">Rent</a> 
                         @elseif($ifshop) 
