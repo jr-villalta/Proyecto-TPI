@@ -54,8 +54,9 @@ Método 1:
 ```
 
 Método 2:
-Importar la base de datos **netfilm.sql** a xampp con el dump de DB. Luego ejecutar los siguientes comandos.
+Importar la base de datos **netfilm.sql** a xampp con el dump de DB.
 Puede obtener el dump de la carpeta enviada en el aula virtual o a través de este enlace: https://mega.nz/file/1ItwFZha#3LRQbgl_wQJ0t2CgPUunVU3qX4c_KkPZ7Y2DzVnLiG0
+Luego ejecutar los siguientes comandos.
 ```sh
   composer install
   php artisan key:generate
