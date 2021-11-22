@@ -23,7 +23,11 @@
                                 <strong class="">Return date:<span class="mb-0 text-success ms-2">{{($rentl->delivery_date)->format('Y-m-d H:i:s')}}</span></strong>
                             </div>
                             <div class="me-2 mt-1 d-flex align-items-start">
-                                <strong class="">Delay return:<span class="mb-0 text-success ms-2">{{abs($rentl->days_late)}} days</span></strong>
+                                @if ($rentl->days_late < 0)
+                                    <strong class="">Delay return:<span class="mb-0 text-success ms-2"> {{abs($rentl->days_late)}} days</span></strong>
+                                @else
+                                <strong class="">Delay return:<span class="mb-0 text-success ms-2"> 0 days</span></strong>
+                                @endif 
                             </div>
                             <hr>
                             <div class="me-2 mt-1 d-flex align-items-start">

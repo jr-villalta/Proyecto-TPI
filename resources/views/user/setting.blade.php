@@ -37,10 +37,9 @@
                             <div class="form-group my-2"> <label for="card_number">
                                     <h6>Card number</h6>
                                 </label>
-                                <div class="input-group h-auto"> <input type="number" name="card_number" id="card_number" placeholder="VISA" class="form-control " required>
+                                <div class="input-group h-auto"> <input type="number" name="card_number" id="card_number" placeholder="VISA / MASTERCARD" class="form-control " required>
                                     <div class="input-group-append"> 
-                                        <span class="input-group-text"> <i class="fab fa-cc-visa m-1"></i>
-                                        </span> 
+                                        <span class="input-group-text"> <i class="fab fa-cc-visa m-1"></i><i class="fab fa-cc-mastercard"></i></span> 
                                     </div>
                                 </div>
                                 
@@ -115,13 +114,23 @@
                     $('#card_number_error').text('Card number is required')
                     return false
                 }
-                if(size < 16 || size > 16){
-                    $('#card_number_error').text('Valid card number contains 16 digits')
+                if(size != 16){
+                    $('#card_number_error').text('Card number invalid size')
                     return false
                 }
-                else{
-                    $('#card_number_error').text('')
-                    return true
+                if(size == 16){
+                    if(cardNumber.substr(0,1) == '4'){
+                        $('#card_number_error').text('')
+                        return true
+                    }
+                    if(cardNumber.substr(0,1) == '5'){
+                        $('#card_number_error').text('')
+                        return true
+                    }
+                    else{
+                        $('#card_number_error').text('Card number invalid')
+                        return false
+                    }
                 }
             }
 
@@ -140,8 +149,8 @@
                     $('#MM_YY_error').text('Format invalid, example: 01/24')
                     return false
                 }
-                if(MM > 12){
-                    $('#MM_YY_error').text('The maximum month is 12')
+                if(MM > 12 || MM < 1){
+                    $('#MM_YY_error').text('The month must be between 1 and 12')
                     return false
                 }
                 if(YY == year){
@@ -188,12 +197,12 @@
                 const YY = $('#YY').val()
                 const CVV = $('#CVV').val()
 
-                let fl = validatedCardOwner(cardOwner)
-                fl = validatedCardNumber(cardNumber)
-                fl = validatedExpirationDate(MM,YY)
-                fl = validatedCVV(CVV)
+                let fl1 = validatedCardOwner(cardOwner)
+                let fl2 = validatedCardNumber(cardNumber)
+                let fl3 = validatedExpirationDate(MM,YY)
+                let fl4 = validatedCVV(CVV)
 
-                if(fl){
+                if(fl1 && fl2 && fl3 && fl4){
                     return true
                 }
                 else{
