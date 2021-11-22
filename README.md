@@ -44,12 +44,17 @@ Website: https://netfilm-ues.herokuapp.com
 
 4. Abrir xampp y crear una base de datos con el nombre de **netfilm**
 
-5. Actualizar la base de datos desde la terminal
+5. Generar Datos iniciales.
+Método 1:
 ```sh
   composer dump-autoload
   php artisan key:generate
   php artisan migrate:fresh --seed
 ```
+
+Método 2:
+Importar la base de datos **netfilm.sql** a xampp con el dump de DB.
+
 Nota: El comando serve nos da acceso directo al servidor web incorporado de PHP
 ```sh
   php artisan serve 
