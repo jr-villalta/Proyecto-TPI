@@ -62,7 +62,7 @@ Importar la base de datos **netfilm.sql** a xampp con el dump de DB. Luego ejecu
 
 **Nota**: El comando serve nos da acceso directo al servidor web incorporado de PHP
 ```sh
-  php artisan serve 
+  php artisan serve
 ```
 
 ### Librerias
