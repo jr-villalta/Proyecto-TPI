@@ -42,7 +42,7 @@
                             </div>
                         </div>
                         <div class="d-flex">
-                            <a href="/home" class="btn btn-primary w-100 mt-3 text-uppercase mx-auto" style="font-weight: 500">OK</a>
+                            <a href="{{ url()->previous() }}" class="btn btn-primary w-100 mt-3 text-uppercase mx-auto" style="font-weight: 500">OK</a>
                         </div>
                     </div>
             </div>
