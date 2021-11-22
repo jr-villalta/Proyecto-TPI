@@ -68,6 +68,14 @@
                           @enderror
                         </div>
                         <div class="mb-4">
+                          <input type="text" class="form-control @error('url') is-invalid @enderror" id="" placeholder="URL" name="url" value="{{old('url', $movie->url)}}" required autofocus>
+                          @error('url')
+                          <span class="invalid-feedback" role="alert">
+                              <strong>{{ $message }}</strong>
+                          </span>
+                          @enderror
+                        </div>
+                        <div class="mb-4">
                           <input class="form-control @error('image') is-invalid @enderror" type="file" id="" name="image" value=""  autofocus>
                           <input type="hidden" name='old_image' id='old_image' value="{{$movie->image}}"/>
                           @error('image')

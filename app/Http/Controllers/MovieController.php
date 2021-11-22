@@ -71,6 +71,7 @@ class MovieController extends Controller
             'rental_price' => 'required|numeric|min:3',
             'sale_price' => 'required|numeric|min:9',
             'availability' => 'required|numeric|min:0',
+            'url' => 'required|string',
             'image' => 'required|max:20000|mimes:jpeg,bmp,png,gif,jpg'
         ]);
 
@@ -90,6 +91,7 @@ class MovieController extends Controller
         $movie->rental_price = $validatedData['rental_price'];
         $movie->sale_price = $validatedData['sale_price'];
         $movie->availability = $validatedData['availability'];
+        $movie->url = $validatedData['url'];
         $movie->likes = 0;
         $movie->save();
     
@@ -138,6 +140,7 @@ class MovieController extends Controller
             'rental_price' => 'required|numeric|min:3',
             'sale_price' => 'required|numeric|min:9',
             'availability' => 'required|numeric|min:0',
+            'url' => 'required|string'
         ]);
 
         $movie = Movie::find($id);
@@ -158,6 +161,7 @@ class MovieController extends Controller
         $movie->rental_price = $validatedData['rental_price'];
         $movie->sale_price = $validatedData['sale_price'];
         $movie->availability = $validatedData['availability'];
+        $movie->url = $validatedData['url'];
         $movie->save();
 
         return redirect('/movie');
