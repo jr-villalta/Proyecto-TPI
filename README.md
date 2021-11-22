@@ -11,7 +11,7 @@
   
 Netfilm es un sitio web donde puedes ver o rentar películas online desde la comodidad de tu casa.
   
-Website: https://netfilm-ues.herokuapp.com
+Deployment: https://netfilm-ues.herokuapp.com
 
 ## Framework
 <p align="center">
