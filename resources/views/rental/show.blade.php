@@ -20,7 +20,7 @@
                                <strong class="">Estimated return date:<span class="mb-0 text-success ms-2">{{($rentl->estimated_delivery_date)}}</span></strong>
                             </div>
                             <div class="me-2 mt-1 d-flex align-items-start">
-                                <strong class="">Return date:<span class="mb-0 text-success ms-2">{{($rentl->delivery_date)->format('Y-m-d H:i:s')}}</span></strong>
+                                <strong class="">Return date:<span class="mb-0 text-success ms-2">{{$rentl->delivery_date}}</span></strong>
                             </div>
                             <div class="me-2 mt-1 d-flex align-items-start">
                                 @if ($rentl->days_late < 0)
@@ -42,7 +42,7 @@
                             </div>
                         </div>
                         <div class="d-flex">
-                            <a href="/home" class="btn btn-primary w-100 mt-3 text-uppercase mx-auto" style="font-weight: 500">OK</a>
+                            <a href="{{ url()->previous() }}" class="btn btn-primary w-100 mt-3 text-uppercase mx-auto" style="font-weight: 500">OK</a>
                         </div>
                     </div>
             </div>

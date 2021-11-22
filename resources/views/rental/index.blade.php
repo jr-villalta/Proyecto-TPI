@@ -37,9 +37,15 @@
                                     <button type="button" class="btn btn-primary dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
                                     Action
                                     </button>
+                                    @if($rental->active == 1)
                                     <ul class="dropdown-menu" style="min-width:5rem;">
-                                        <li><a class="dropdown-item text-primary" href="/movie/details/{{$rental->movie_id}}"><i class="far fa-eye me-1"></i>Watch</a></li>
+                                        <li><a class="dropdown-item text-primary" href="/movie/{{$rental->movie_id}}"><i class="fas fa-film me-1"></i>Movie details</a></li>
                                     </ul>
+                                    @else
+                                    <ul class="dropdown-menu" style="min-width:5rem;">
+                                        <li><a class="dropdown-item text-primary" href="/rental/{{$rental->id}}"><i class="far fa-file-alt me-1"></i>Rental details</a></li>
+                                    </ul>
+                                    @endif
                                 </div>
                             </td>
                         </tr>

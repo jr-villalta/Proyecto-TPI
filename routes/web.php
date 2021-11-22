@@ -41,4 +41,4 @@ Route::get('/shopping','ShoppingController@index')->name('shopping.index')->midd
 Route::post('rental','RentalController@store')->name('rental.store');
 Route::get('/rental/mymovies/{id}','RentalController@indexbyuser')->name('rental.indexbyuser')->middleware('auth','ishe');
 Route::get('/rental','RentalController@index')->name('rental.index')->middleware('isadmin');
-
+Route::get('/rental/{rental}','RentalController@show')->name('rental.show')->middleware('auth');
