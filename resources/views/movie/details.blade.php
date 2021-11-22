@@ -45,7 +45,7 @@
                         @elseif($ifshop)
                         <a href="/movie/play/{{$movie->id}}" class="btn btn-primary text-uppercase w-100 ms-2" style="font-weight: 500;">Play</a>
                         @elseif($ifrental)
-                        <a href="/movie/play/{{$movie->id}}" class="btn btn-primary text-uppercase w-100 ms-2" style="font-weight: 500;">Play</a>
+                        <a href="/movie/play/{{$movie->id}}" class="btn btn-primary text-uppercase w-50 ms-2" style="font-weight: 500;">Play</a>
                         <a href="/movie/returnRent/{{$movie->id}}" class="btn btn-primary text-uppercase w-50 ms-2" style="font-weight: 500;">Return</a>
                         @endif
                     </li>

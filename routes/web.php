@@ -27,7 +27,7 @@ Route::get('/movie/play/{movie}','MovieController@play')->middleware('auth','has
 Route::get('/movie/like/{movie}','MovieController@like')->middleware('auth');
 Route::get('/movie/shopping/{movie}', 'MovieController@shopping')->middleware(['hascard','auth']);
 Route::get('/movie/rental/{movie}', 'MovieController@rentar')->middleware(['hascard','auth']);
-Route::get('/movie/returnRent/{movie}', 'MovieController@returnRent');
+Route::get('/movie/returnRent/{movie}', 'MovieController@returnRent')->middleware('auth','hasmovie');
 Route::resource('/movie','MovieController')->middleware('isadmin');
 //rutas creditcard
 /* Route::get('creditcard/create','CreditCardController@create'); */
