@@ -40,6 +40,7 @@
                                     @if($rental->active == 1)
                                     <ul class="dropdown-menu" style="min-width:5rem;">
                                         <li><a class="dropdown-item text-primary" href="/movie/details/{{$rental->movie_id}}"><i class="far fa-eye me-1"></i>Watch</a></li>
+                                        <li><a class="dropdown-item text-primary" href="/movie/returnRent/{{$rental->movie_id}}"><i class="fas fa-backward me-1"></i>Return</a></li>
                                     </ul>
                                     @else
                                     <ul class="dropdown-menu" style="min-width:5rem;">
