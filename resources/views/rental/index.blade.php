@@ -7,8 +7,12 @@
                 <thead>
                     <tr>
                         <th>Title</th>
+                        <th>Estatus</th>
+                        <th>Penalty fee</th>
+                        <th>Rental price</th>
                         <th>Total</th>
-                        <th>Acquisition date</th>
+                        <th>Rented date</th>
+                        <th>Return date</th>
                         <th>Actions</th>
                     </tr>
                 </thead>
@@ -16,8 +20,20 @@
                     @foreach ($rentals as $rental)
                         <tr>
                             <td>{{$rental->title}}</td>
-                            <td>{{$rental->total}}</td>
+                            <td>
+                                @if($rental->active == 1)
+                                    Active
+                                @else
+                                    Closed
+                                @endif
+                            </td>
+                            <td>
+                                ${{number_format($rental->penalty_fee,2,".",",")}}
+                            </td>
+                            <td>${{number_format($rental->rental_price,2,".",",")}}</td>
+                            <td>${{number_format($rental->total,2,".",",")}}</td>
                             <td>{{$rental->created_at}}</td>
+                            <td>{{$rental->estimated_delivery_date}}</td>
                             <td class="text-center">
                                 <div class="btn-group">
                                     <button type="button" class="btn btn-primary dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
@@ -34,8 +50,12 @@
                 <tfoot>
                     <tr>
                         <th>Title</th>
+                        <th>Estatus</th>
+                        <th>Penalty fee</th>
+                        <th>Rental cost</th>
                         <th>Total</th>
-                        <th>Acquisition date</th>
+                        <th>Rented date</th>
+                        <th>Return date</th>
                         <th>Actions</th>
                     </tr>
                 </tfoot>

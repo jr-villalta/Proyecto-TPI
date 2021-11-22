@@ -24,6 +24,7 @@ class CreateRentalsTable extends Migration
             $table->timestamp('estimated_delivery_date')->nullable();
             $table->unsignedBigInteger('user_id');
             $table->unsignedBigInteger('movie_id');
+            $table->double('rental_price');
             $table->double('total');
             $table->foreign('user_id')->references('id')->on('users');
             $table->foreign('movie_id')->references('id')->on('movies');

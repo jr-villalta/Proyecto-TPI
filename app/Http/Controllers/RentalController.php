@@ -27,7 +27,7 @@ class RentalController extends Controller
     {
         $rentals = rental::where('user_id', $id)->get();
 
-        return view('rental.index',[
+        return view('rental.indexbyuser',[
             'rentals' => $rentals 
         ]);
     }
@@ -53,6 +53,7 @@ class RentalController extends Controller
         $ifrental = rental::where('user_id', Auth::user()->id)->where('movie_id', $request->movie_id)->where('active', 1)->exists();
         
         if(!$ifrental){
+
             $movie = Movie::where('id',$request->movie_id)->first();
             $movie->stock -= 1;
             if($movie->stock == 0){
@@ -61,12 +62,15 @@ class RentalController extends Controller
 
             $rentl = new rental();
             $rentl->title = $request->movie_title.'-'.str_replace(" ", "-", Auth::user()->name);
-            $rentl->total = $request->total;
-            $rentl->days_rented = 7;
             $rentl->active = 1;
+            $rentl->days_rented = 7;
+            $rentl->days_late = 0;
+            $rentl->penalty_fee = 0;
+            $rentl->estimated_delivery_date = date("Y-m-d H:i:s",strtotime($rentl->created_at."+{$rentl->days_rented} days"));
             $rentl->user_id = Auth::user()->id;
             $rentl->movie_id = $request->movie_id;
-            $rentl->estimated_delivery_date = date("Y-m-d H:i:s",strtotime($rentl->created_at."+{$rentl->days_rented} days")); ;
+            $rentl->rental_price = $request->total; 
+            $rentl->total = $rentl->penalty_fee+$request->total;
             $rentl->save();
             $movie->save();
         }
