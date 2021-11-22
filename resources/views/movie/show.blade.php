@@ -20,7 +20,7 @@
                             @endif
                         </li>
                         <li class="list-group-item"><strong class="me-2">Likes:</strong> {{$movie->likes}}</li>
-                        <li class="list-group-item text-center mt-2"><a href="/movie" class="btn btn-primary px-4">Back</a></li>
+                        <li class="list-group-item text-center mt-2"><a href="{{ url()->previous() }}" class="btn btn-primary px-4">Back</a></li>
                       </ul>
                   </div>
             </div>

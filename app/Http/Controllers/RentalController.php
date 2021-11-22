@@ -80,6 +80,21 @@ class RentalController extends Controller
 
     }
 
+    /**
+     * Display the specified resource.
+     *
+     * @param  int  $id
+     * @return \Illuminate\Http\Response
+     */
+    public function show($id)
+    {   
+        $rentl = rental::find($id);
+
+        return view('rental.show',[
+            'rentl' =>$rentl
+        ]);
+    }
+
     public static function returnRentedMovie($id){
 
         $rentl = rental::where('user_id', Auth::user()->id)->where('movie_id', $id)->where('active', 1)->first(); 
