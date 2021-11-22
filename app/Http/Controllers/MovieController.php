@@ -3,6 +3,7 @@
 
 namespace App\Http\Controllers;
 
+
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Validator;
 use App\Movie;
@@ -261,23 +262,17 @@ class MovieController extends Controller
     }
 
     public function returnRent($id){
-
-        $rentl = rental::where('user_id', Auth::user()->id)->where('movie_id', $id)->where('active', 1)->first();
         
-        dd($rentl);
+        $rentl = RentalController::returnRentedMovie($id);
+        
+
+        /*s$rentl->estimated_delivery_date;
+        $rentl->delivery_date; */
 
         return view('movie.returnRent',[
             'rentl' => $rentl
         ]);
 
-        /* $rentl = rental::where('user_id', Auth::user()->id)->where('movie_id', $id)->first();
-
-            $rentl->active = 0;
-            $rentl->delivery_date = new DateTime();
-            $diff = $rentl->created_at->diff($rentl->delivery_date);
-            $rentl->days_late = $rentl->days_rented-$diff->days;
-            $rentl->penalty_fee = abs($rentl->days_late * 1);
-            $rentl->save(); */
     }
 
     public function play($id){

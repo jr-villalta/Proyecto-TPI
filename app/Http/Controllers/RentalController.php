@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\rental;
 use App\Movie;
 use Auth;
+use DateTime;
 
 class RentalController extends Controller
 {
@@ -78,4 +79,62 @@ class RentalController extends Controller
         return redirect('/movie/details/'.$request->movie_id);
 
     }
+
+    public static function returnRentedMovie($id){
+
+        $rentl = rental::where('user_id', Auth::user()->id)->where('movie_id', $id)->where('active', 1)->first(); 
+        $movie = Movie::find($rentl->movie_id);
+        $movie->stock += 1;
+        if($movie->stock > 0 && $movie->availability == 0){
+            $movie->availability = 1;
+        }
+ 
+        $rentl->active = 0; 
+        $rentl->delivery_date = new DateTime(); 
+        $diff = $rentl->created_at->diff($rentl->delivery_date);
+
+        $rentl->days_late = $rentl->days_rented-$diff->days; 
+        
+        if($rentl->days_late < 0){
+            $rentl->penalty_fee = abs($rentl->days_late * 1); 
+        }
+        else{
+            $rentl->penalty_fee = 0; 
+        }
+        
+        $rentl->total = $rentl->penalty_fee+$rentl->rental_price;
+        $rentl->save();
+        $movie->save();
+
+        return $rentl;
+
+    }
 }
+
+/*          $rentl = rental::where('user_id', Auth::user()->id)->where('movie_id', $id)->where('active', 1)->first();
+
+            $movie = Movie::find($rentl->movie_id);
+            $movie->stock += 1;
+            if($movie->stock > 0 && $movie->availability == 0){
+                $movie->availability = 1;
+            }
+    
+            $rentl->active = 0;
+            $rentl->delivery_date = new DateTime();
+            $diff = $rentl->created_at->diff($rentl->estimated_delivery_date);
+            
+            if($diff->invert == 1){
+                $rentl->days_late = $diff->days;
+                $rentl->penalty_fee = $rentl->days_late * 1;
+            }
+            else{
+                $rentl->days_late = 0;
+                $rentl->penalty_fee = $rentl->days_late * 1;
+            }
+    
+            $rentl->total = $rentl->penalty_fee+$rentl->rental_price;
+    
+            dd($rentl,$diff);
+            $rentl->save();
+            $movie->save();
+     */
