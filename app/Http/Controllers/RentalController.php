@@ -66,6 +66,7 @@ class RentalController extends Controller
             $rentl->active = 1;
             $rentl->user_id = Auth::user()->id;
             $rentl->movie_id = $request->movie_id;
+            $rentl->estimated_delivery_date = date("Y-m-d H:i:s",strtotime($rentl->created_at."+{$rentl->days_rented} days")); ;
             $rentl->save();
             $movie->save();
         }

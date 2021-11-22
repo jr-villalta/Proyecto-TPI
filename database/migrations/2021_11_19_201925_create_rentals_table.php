@@ -21,6 +21,7 @@ class CreateRentalsTable extends Migration
             $table->integer('days_late')->nullable();
             $table->double('penalty_fee')->nullable();
             $table->timestamp('delivery_date')->nullable();
+            $table->timestamp('estimated_delivery_date')->nullable();
             $table->unsignedBigInteger('user_id');
             $table->unsignedBigInteger('movie_id');
             $table->double('total');

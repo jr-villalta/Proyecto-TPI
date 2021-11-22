@@ -20,7 +20,7 @@
                                 <strong class="">Pay with:</i><span class="h6 mb-0 text-success ms-2">**** **** **** {{substr($card_number,12,16)}} </span></strong>
                             </div>
                             <div class="me-2 mt-1 d-flex align-items-start">
-                                <strong class="">Total:</strong><strong class="ms-2 text-success"> ${{number_format($movie->sale_price,2,".",",")}}</strong>
+                                <strong class="">Total:</strong><strong class="ms-2 text-success"> ${{number_format($movie->rental_price,2,".",",")}}</strong>
                             </div>
                         </div>
                         <div class="">
