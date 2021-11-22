@@ -13,6 +13,20 @@ Netfilm es un sitio web donde puedes ver o rentar películas online desde la com
   
 Website: https://netfilm-ues.herokuapp.com
 
+## Framework
+<p align="center">
+  <img width="200" src="https://img.shields.io/badge/Laravel-FF2D20?style=for-the-badge&logo=laravel&logoColor=white" alt="Material Bread logo">
+</p>
+<p align="center">
+  v 6.20.26
+</p>
+
+## Detalles
+  
+[![All Contributors](https://img.shields.io/badge/all_contributors-5-green.svg?style=flat-square)](#contributors-)
+<img alt="Packagist PHP Version Support" src="https://img.shields.io/packagist/php-v/jr-villalta/Proyecto-TPI?style=flat-square">
+<img alt="GitHub repo size" src="https://img.shields.io/github/repo-size/jr-villalta/Proyecto-TPI?style=flat-square">
+
 ## Integrantes
 
 | Nombres                                 | Carnet      |
