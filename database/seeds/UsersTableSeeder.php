@@ -69,7 +69,7 @@ class UsersTableSeeder extends Seeder
         $peli->sale_price = 9.99;
         $peli->availability = 1;
         $peli->likes = 0;
-        $peli->url = "https://s18.upstreamcdn.co/hls/w47rzwtabvbnx2nrozs2ma73k4afygsuhqa6bbunf6sn45lie4t7yvrxll3q/index-v1-a1.m3u8";
+        $peli->url = "https://www36.sbcdnvideo.com/hls/tysxe67m5o66j6cdababxfsteqa64bzrsfa5k25a2vjeuuolop4fkkonphpq/index-v1-a1.m3u8";
         $peli->save();
 
         $peli = new Movie();
@@ -81,7 +81,7 @@ class UsersTableSeeder extends Seeder
         $peli->sale_price = 9.99;
         $peli->availability = 1;
         $peli->likes = 0;
-        $peli->url = "https://s18.upstreamcdn.co/hls/w47rztmaajbnx2nrozxkmxnckq6aydbgfcjka6f7vkvsoijhpo4ytdubptba/index-v1-a1.m3u8";
+        $peli->url = "https://www225.sbcdnvideo.com/hls/tysxfbquxw66j6cdabvrrrkzfzyk2srq7gflhz7ubkz75fjscgtouvvstc7a/index-v1-a1.m3u8";
         $peli->save();
 
         $peli = new Movie();
@@ -105,7 +105,7 @@ class UsersTableSeeder extends Seeder
         $peli->sale_price = 9.99;
         $peli->availability = 1;
         $peli->likes = 0;
-        $peli->url = "https://www7.sbcdnvideo.com/hls/tysxf47ixc66j6cdaczbzrsjf75dqso65hz52p2llkwp33tu5mzte5farxpq/index-v1-a1.m3u8";
+        $peli->url = "https://www7.sbcdnvideo.com/hls/tysxf47ixc66j6cdaczbzrsjf75dqso65hz52p2llkwp33tu5mz4axnbrxpq/index-v1-a1.m3u8";
         $peli->save();
 
         $peli = new Movie();
@@ -117,7 +117,7 @@ class UsersTableSeeder extends Seeder
         $peli->sale_price = 9.99;
         $peli->availability = 1;
         $peli->likes = 0;
-        $peli->url = "https://www21.sbcdnvideo.com/hls/tysxfgdqnw66j6cdaaebdhajekvuepaeuvaagdeedjlfugbauwjfz7s25oxa/index-v1-a1.m3u8";
+        $peli->url = "https://www21.sbcdnvideo.com/hls/tysxfgdqnw66j6cdaaebdhajekvuepaeuvaagdeedjlfugbauwjdyks25oxa/index-v1-a1.m3u8";
         $peli->save();
 
         $peli = new Movie();
@@ -129,7 +129,7 @@ class UsersTableSeeder extends Seeder
         $peli->sale_price = 9.99;
         $peli->availability = 1;
         $peli->likes = 0;
-        $peli->url = "https://www51.sbcdnvideo.com/hls/tysxfgyhu666j6cdaa3bzhkjganwbswvmj4vpa2ilyaexluox4ggusk2b3hq/index-v1-a1.m3u8";
+        $peli->url = "https://www51.sbcdnvideo.com/hls/tysxfgyhu666j6cdaa3bzhkjganwbswvmj4vpa2ilyaexluox4givhc2b3hq/index-v1-a1.m3u8";
         $peli->save();
 
         $peli = new Movie();
@@ -141,7 +141,7 @@ class UsersTableSeeder extends Seeder
         $peli->sale_price = 9.99;
         $peli->availability = 1;
         $peli->likes = 0;
-        $peli->url = "https://s18.upstreamcdn.co/hls/w47ryxjbanbnx2nrozgkmqx3k77ra3rnn4fq3gbgmszwpsanmf55ca6qer5q/index-v1-a1.m3u8";
+        $peli->url = "https://www28.sbcdnvideo.com/hls/tysxfpdunw66j6cdaaebdw2jgqrubbvrvpragm57qc26zamr4y5sdvrnrdqa/index-v1-a1.m3u8";
         $peli->save();
 
         $peli = new Movie();
@@ -153,7 +153,7 @@ class UsersTableSeeder extends Seeder
         $peli->sale_price = 9.99;
         $peli->availability = 1;
         $peli->likes = 0;
-        $peli->url = "https://www100.sbcdnvideo.com/hls/tysxevaej666j6cdadyr7ssuoigzdpalbbeohdatq4dgt4oypwfcvcc4woha/index-v1-a1.m3u8";
+        $peli->url = "https://www100.sbcdnvideo.com/hls/tysxevaej666j6cdadyr7ssuoigzdpalbbeohdatq4dgt4oypwflixc4woha/index-v1-a1.m3u8";
         $peli->save();
 
         $peli = new Movie();
@@ -165,7 +165,7 @@ class UsersTableSeeder extends Seeder
         $peli->sale_price = 9.99;
         $peli->availability = 1;
         $peli->likes = 0;
-        $peli->url = "https://www288.sbcdnvideo.com/hls/tysxenhhv666j6cdabjbzgiiezmbrlibwddzem6jp5ehdwpgidxseqdlroka/index-v1-a1.m3u8";
+        $peli->url = "https://www288.sbcdnvideo.com/hls/tysxenhhv666j6cdabjbzgiiezmbrlibwddzem6jp5ehdwpgidxy66lkroka/index-v1-a1.m3u8";
         $peli->save();
 
         $peli = new Movie();
@@ -177,7 +177,7 @@ class UsersTableSeeder extends Seeder
         $peli->sale_price = 9.99;
         $peli->availability = 1;
         $peli->likes = 0;
-        $peli->url = "https://www261.sbcdnvideo.com/hls/tysxfdwcro66j6cdadrbvw2tfzhrbgeq35poqlaktgwoxep3s6drv7m4jcea/index-v1-a1.m3u8";
+        $peli->url = "https://www261.sbcdnvideo.com/hls/tysxfdwcro66j6cdadrbvw2tfzhrbgeq35poqlaktgwoxep3s6d3lre5jcea/index-v1-a1.m3u8";
         $peli->save();
 
         $peli = new Movie();
@@ -189,7 +189,7 @@ class UsersTableSeeder extends Seeder
         $peli->sale_price = 9.99;
         $peli->availability = 1;
         $peli->likes = 0;
-        $peli->url = "https://www286.sbcdnvideo.com/hls/tysxfxruo266j6cdadbrbhyhoyxt22r6hlfpewkihcu6sekpmtnorufgarsa/index-v1-a1.m3u8";
+        $peli->url = "https://www286.sbcdnvideo.com/hls/tysxfxruo266j6cdadbrbhyhoyxt22r6hlfpewkihcu6sekpmtng72vharsa/index-v1-a1.m3u8";
         $peli->save();
 
         $peli = new Movie();
@@ -201,7 +201,7 @@ class UsersTableSeeder extends Seeder
         $peli->sale_price = 9.99;
         $peli->availability = 1;
         $peli->likes = 0;
-        $peli->url = "https://www133.sbcdnvideo.com/hls/tysxfamtwk66j6cdaa2r7tcdfpsgrcdbhvzwfnyjqyvrpgtrkkr2bt26edwa/index-v1-a1.m3u8";
+        $peli->url = "https://www133.sbcdnvideo.com/hls/tysxfamtwk66j6cdaa2r7tcdfpsgrcdbhvzwfnyjqyvrpgtrkkrtz5k7edwa/index-v1-a1.m3u8";
         $peli->save();
 
         $peli = new Movie();
@@ -213,19 +213,8 @@ class UsersTableSeeder extends Seeder
         $peli->sale_price = 9.99;
         $peli->availability = 1;
         $peli->likes = 0;
-        $peli->url = "https://www99.sbcdnvideo.com/hls/tysxe3c4xo66j6cdabib7tkwe5zo3h6r5b35tc6ucivxpcdzwbdx25sxrd6a/index-v1-a1.m3u8";
+        $peli->url = "https://www99.sbcdnvideo.com/hls/tysxe3c4xo66j6cdabib7tkwe5zo3h6r5b35tc6ucivxpcdzwbdqrlcxrd6a/index-v1-a1.m3u8";
         $peli->save();
-
-        $peli = new Movie();
-        $peli->title = "¿Qué pasó ayer?";
-        $peli->description = 'Dos días antes de su boda, Doug y tres amigos viajan a Las Vegas para una fiesta inolvidable y salvaje. De hecho, cuando los tres acompañantes despiertan la mañana siguiente, no recuerdan nada ni encuentran a Doug. Con poco tiempo por delante, los tres amigos intentan recordar sus pasos y encontrar a Doug para que regrese a Los Ángeles para su bod';
-        $peli->image = "img/moviesfile/quepasoayer.jpg";
-        $peli->stock = 100;
-        $peli->rental_price = 3.99;
-        $peli->sale_price = 9.99;
-        $peli->availability = 1;
-        $peli->likes = 0;
-        $peli->url = "https://s26.upstreamcdn.co/hls/w47rybegajbnx2nrozf2mbnoa3hwj7ubywrjwv6mzjsji4svhmk7qvexb3iq/index-v1-a1.m3u8";
 
 	$peli = new Movie();
         $peli->title = "Venom: Carnage liberado";
@@ -248,7 +237,7 @@ class UsersTableSeeder extends Seeder
         $peli->sale_price = 9.99;
         $peli->availability = 1;
         $peli->likes = 0;
-        $peli->url = "https://www288.sbcdnvideo.com/hls/tysxfmah7s66j6cdaayrxvkafwnlwkof7rblte5l45gsd66bmbnirpjnkq7a/index-v1-a1.m3u8";
+        $peli->url = "https://www288.sbcdnvideo.com/hls/tysxfmah7s66j6cdaayrxvkafwnlwkof7rblte5l45gsd66bmbnlayznkq7a/index-v1-a1.m3u8";
         $peli->save();
          
         $peli = new Movie();
@@ -260,7 +249,7 @@ class UsersTableSeeder extends Seeder
         $peli->sale_price = 9.99;
         $peli->availability = 1;
         $peli->likes = 0;
-        $peli->url = "https://www101.sbcdnvideo.com/hls/tysxesetwo66j6cdadbb7skbozqmmv6heumqkifl7hzejs72wolv2hgsu4qa/index-v1-a1.m3u8";
+        $peli->url = "https://www101.sbcdnvideo.com/hls/tysxesetwo66j6cdadbb7skbozqmmv6heumqkifl7hzejs72wol6qiwtu4qa/index-v1-a1.m3u8";
         $peli->save();
  
         $peli = new Movie();
@@ -272,7 +261,7 @@ class UsersTableSeeder extends Seeder
         $peli->sale_price = 9.99;
         $peli->availability = 1;
         $peli->likes = 0;
-        $peli->url = "https://www261.sbcdnvideo.com/hls/tysxeehxr666j6cdaa7bvgsue75rbylyooff2vhj3vkzu7nb5vuddgznksyq/index-v1-a1.m3u8";
+        $peli->url = "https://www261.sbcdnvideo.com/hls/tysxeehxr666j6cdaa7bvgsue75rbylyooff2vhj3vkzu4gfoaju4jwgyv3q/index-v1-a1.m3u8";
         $peli->save();
  
         $peli = new Movie();
@@ -284,7 +273,7 @@ class UsersTableSeeder extends Seeder
         $peli->sale_price = 9.99;
         $peli->availability = 1;
         $peli->likes = 0;
-        $peli->url = "https://www111.sbcdnvideo.com/hls/tysxen5gxo66j6cdabwb7wieedbpvrulsbube645qo7gdkh24qzg4p5cvp3q/index-v1-a1.m3u8";
+        $peli->url = "https://www111.sbcdnvideo.com/hls/tysxen5gxo66j6cdabwb7wieedbpvrulsbube645qo7gdkh24qzncafdvp3q/index-v1-a1.m3u8";
         $peli->save();
  
         $peli = new Movie();
@@ -296,7 +285,7 @@ class UsersTableSeeder extends Seeder
         $peli->sale_price = 9.99;
         $peli->availability = 1;
         $peli->likes = 0;
-        $peli->url = "https://www289.sbcdnvideo.com/hls/tysxeq2qxo66j6cdabpr7x2qg6hgcnhue5dpl36ayvijstsd335tcwi3uwza/index-v1-a1.m3u8";
+        $peli->url = "https://www289.sbcdnvideo.com/hls/tysxeq2qxo66j6cdabpr7x2qg6hgcnhue5dpl36ayvijstsd3356qzy2uwza/index-v1-a1.m3u8";
         $peli->save();
  
         $peli = new Movie();
@@ -309,7 +298,7 @@ class UsersTableSeeder extends Seeder
         $peli->sale_price = 9.99;
         $peli->availability = 1;
         $peli->likes = 0;
-        $peli->url = "https://www68.sbcdnvideo.com/hls/tysxe5b5lw66j6cdaa4bvgkzpljyme55shnx3mpsmyfaxjbfdtlgd2ecn4ha/index-v1-a1.m3u8";
+        $peli->url = "https://www68.sbcdnvideo.com/hls/tysxe5b5lw66j6cdaa4bvgkzpljyme55shnx3mpsmyfaxjbfdtlgvvmdn4ha/index-v1-a1.m3u8";
         $peli->save();
  
         $peli = new Movie();
@@ -321,7 +310,7 @@ class UsersTableSeeder extends Seeder
         $peli->sale_price = 9.99;
         $peli->availability = 1;
         $peli->likes = 0;
-        $peli->url = "https://www107.sbcdnvideo.com/hls/tysxe2g3xo66j6cdablb7hshoy77f24uggz7xme5grrbtsok2tjkdcvgla7a/index-v1-a1.m3u8";
+        $peli->url = "https://www107.sbcdnvideo.com/hls/tysxe2g3xo66j6cdablb7hshoy77f24uggz7xme5grrbtsok2tjknn5hla7a/index-v1-a1.m3u8";
         $peli->save();
  
         $peli = new Movie();
@@ -333,7 +322,7 @@ class UsersTableSeeder extends Seeder
         $peli->sale_price = 9.99;
         $peli->availability = 1;
         $peli->likes = 0;
-        $peli->url = "https://www93.sbcdnvideo.com/hls/tysxfulzuk66j6cdadwbzxycfeecruiwl22ruxj2gqjlqom6l3gqppgzl2ea/index-v1-a1.m3u8";
+        $peli->url = "https://www295.sbcdnvideo.com/hls/tysxfulzuk66j6cdadwbzxycfeecruiwl22ruxj2gqjlqom6l3g2bd6yl2ea/index-v1-a1.m3u8";
         $peli->save();
  
         $peli = new Movie();
@@ -370,7 +359,7 @@ class UsersTableSeeder extends Seeder
         $peli->sale_price = 9.99;
         $peli->availability = 1;
         $peli->likes = 0;
-        $peli->url = "https://www264.sbcdnvideo.com/hls/tysxecxtjw66j6cdadvr7f25gaxcj4yn5bvxhcxzpyzjpkvoqcyhkavoy5ba/index-v1-a1.m3u8";
+        $peli->url = "https://www264.sbcdnvideo.com/hls/tysxecxtjw66j6cdadvr7f25gaxcj4yn5bvxhcxzpyzjpkvoqcym3wvoy5ba/index-v1-a1.m3u8";
         $peli->save();
 
 	$peli = new Movie();
@@ -383,7 +372,7 @@ class UsersTableSeeder extends Seeder
         $peli->sale_price = 9.99;
         $peli->availability = 1;
         $peli->likes = 0;
-        $peli->url = "https://cheetah.jawcloud.co/hls/baxpi5c6mnts7n2gmjeoohn5li6lubtdobc23xor3wau44uuokt4rwe3urva/index-v1-a1.m3u8";
+        $peli->url = "https://www292.sbcdnvideo.com/hls/tysxflhiwk66j6cdaa2r7wkqgeysbmkizfsuafsznpc2x35ezbfyumii5cwa/index-v1-a1.m3u8";
         $peli->save();
 
 	$peli = new Movie();
@@ -395,7 +384,7 @@ class UsersTableSeeder extends Seeder
         $peli->sale_price = 9.99;
         $peli->availability = 1;
         $peli->likes = 0;
-        $peli->url = "https://www263.sbcdnvideo.com/hls/tysxeytpvc66j6cdaburzvsgpojskk4yagw6lwcbswfpn6qpk6slqbx6ihvq/index-v1-a1.m3u8";
+        $peli->url = "https://www263.sbcdnvideo.com/hls/tysxeytpvc66j6cdaburzvsgpojskk4yagw6lwcbswfpn6qpk6scun77ihvq/index-v1-a1.m3u8";
         $peli->save();
 
 	$peli = new Movie();
@@ -407,7 +396,7 @@ class UsersTableSeeder extends Seeder
         $peli->sale_price = 9.99;
         $peli->availability = 1;
         $peli->likes = 0;
-        $peli->url = "https://www271.sbcdnvideo.com/hls/tysxenuhw266j6cdaaar7xaegptlohdn2t3n6rl4c3rutm4mifeteyga62ga/index-v1-a1.m3u8";
+        $peli->url = "https://www271.sbcdnvideo.com/hls/tysxenuhw266j6cdaaar7xaegptlohdn2t3n6rl4c3rutm4mifetuuwb62ga/index-v1-a1.m3u8";
         $peli->save();
         
         // -------------------------- likes ---------------------------------------------
