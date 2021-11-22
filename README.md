@@ -27,6 +27,34 @@ Website: https://netfilm-ues.herokuapp.com
 <img alt="Packagist PHP Version Support" src="https://img.shields.io/badge/php-8.0-blue">
 <img alt="GitHub repo size" src="https://img.shields.io/github/repo-size/jr-villalta/Proyecto-TPI?style=flat-square">
 
+### Configuraciones
+
+1. Clonar el repositorio en un directorio específico
+```sh
+  git clone https://github.com/jr-villalta/Proyecto-TPI.git
+```
+2. Abrir una terminal desde el directorio y ejecutar los siguientes comandos
+```sh
+  composer update
+```
+3. Copiar el archivo **.env.example** y pegar el archivo en el mismo directorio.
+   Cambiar el nombre del archivo **.env copy.example** a **.env**
+
+   En el Archivo **.env**, **DB_DATABASE** tiene **laravel** por defecto. Cambiar **laravel** por **netfilm**
+
+4. Abrir xampp y crear una base de datos con el nombre de **netfilm**
+
+5. Actualizar la base de datos desde la terminal
+```sh
+  composer dump-autoload
+  php artisan key:generate
+  php artisan migrate:fresh --seed
+```
+Nota: El comando serve nos da acceso directo al servidor web incorporado de PHP
+```sh
+  php artisan serve 
+```
+
 ## Integrantes
 
 | Nombres                                 | Carnet      |
