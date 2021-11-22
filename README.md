@@ -18,13 +18,13 @@ Website: https://netfilm-ues.herokuapp.com
   <img width="200" src="https://img.shields.io/badge/Laravel-FF2D20?style=for-the-badge&logo=laravel&logoColor=white" alt="Material Bread logo">
 </p>
 <p align="center">
-  v 6.20.26
+    <img alt="Packagist PHP Version Support" src="https://img.shields.io/badge/v-6.20.26-red">
 </p>
 
 ## Detalles
   
 [![All Contributors](https://img.shields.io/badge/all_contributors-5-green.svg?style=flat-square)](#contributors-)
-<img alt="Packagist PHP Version Support" src="https://img.shields.io/packagist/php-v/jr-villalta/Proyecto-TPI?style=flat-square">
+<img alt="Packagist PHP Version Support" src="https://img.shields.io/badge/php-8.0-blue">
 <img alt="GitHub repo size" src="https://img.shields.io/github/repo-size/jr-villalta/Proyecto-TPI?style=flat-square">
 
 ## Integrantes
